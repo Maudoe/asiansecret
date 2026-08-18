@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0908">
+  <title>AsianSecret</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="envoltorio">
+
+    <header class="cabecera" id="cabecera">
+      <div class="idiomas" role="group">
+        <button class="idioma-btn" data-idioma="es">ES</button>
+        <button class="idioma-btn" data-idioma="en">EN</button>
+      </div>
+      <img class="logo" src="assets/logo.png" alt="AsianSecret">
+      <p class="lema" data-t="app.lema">EL SECRETO ASIÁTICO</p>
+      <p class="intro" data-t="app.intro"></p>
+    </header>
+
+    <nav class="nav">
+      <button class="nav-btn activo" data-vista="recetas"><span data-t="nav.recetas">Recetas</span></button>
+      <button class="nav-btn" data-vista="seleccion">
+        <span data-t="nav.seleccion">Mi selección</span><span class="globo oculto" id="globo-sel">0</span>
+      </button>
+      <button class="nav-btn" data-vista="compras"><span data-t="nav.compras">Compras</span></button>
+      <button class="nav-btn" data-vista="alacena"><span data-t="nav.alacena">Alacena</span></button>
+    </nav>
+
+    <!-- ============ PAÍSES ============ -->
+    <section class="vista" id="vista-paises">
+      <div class="grilla-paises" id="grilla-paises"></div>
+    </section>
+
+    <!-- ============ RECETAS ============ -->
+    <section class="vista oculto" id="vista-recetas">
+      <div class="pais-hero" id="pais-hero">
+        <img class="pais-hero-fondo" id="pais-hero-img" alt="">
+        <div class="pais-hero-velo"></div>
+        <div class="pais-hero-texto">
+          <button class="volver" id="volver-paises">
+            <span class="volver-flecha">←</span><span data-t="paises.volver">Todos los países</span>
+          </button>
+          <h2 class="pais-hero-nombre" id="pais-hero-nombre"></h2>
+          <p class="pais-hero-sub" id="pais-hero-sub"></p>
+        </div>
+      </div>
+      <div class="barra-filtros">
+        <input type="search" class="buscador" id="buscador" data-t-ph="buscar.placeholder">
+
+        <div class="chips" id="chips-tipo">
+          <button class="chip activo" data-tipo="todo" data-t="cat.todas">Todas</button>
+          <button class="chip" data-tipo="salado"><span>🍜</span><span data-t="filtro.salado">Salado</span></button>
+          <button class="chip dulce" data-tipo="dulce"><span>🍡</span><span data-t="filtro.dulce">Repostería</span></button>
+        </div>
+
+        <div class="chips" id="chips-categoria"></div>
+        <p class="sub" id="conteo"></p>
+      </div>
+
+      <div class="grilla" id="grilla"></div>
+      <div class="vacio oculto" id="sin-resultados">
+        <div class="vacio-icono">🍥</div>
+        <p data-t="filtro.vacio"></p>
+      </div>
+    </section>
+
+    <!-- ============ MI SELECCIÓN ============ -->
+    <section class="vista oculto" id="vista-seleccion">
+      <h2 class="titulo-seccion" data-t="seleccion.titulo">Mi selección</h2>
+      <p class="sub" id="seleccion-sub"></p>
+
+      <div class="grilla" id="grilla-seleccion"></div>
+      <div class="vacio oculto" id="seleccion-vacia">
+        <div class="vacio-icono">🥢</div>
+        <p data-t="seleccion.vacia"></p>
+      </div>
+
+      <div class="acciones oculto" id="seleccion-acciones">
+        <button class="btn btn-oro" id="btn-ir-compras" data-t="seleccion.verCompras">Ver lista de compras</button>
+        <button class="btn btn-linea" id="btn-limpiar" data-t="seleccion.limpiar">Vaciar selección</button>
+      </div>
+    </section>
+
+    <!-- ============ COMPRAS ============ -->
+    <section class="vista oculto" id="vista-compras">
+      <h2 class="titulo-seccion" data-t="compras.titulo">Lista de compras</h2>
+      <p class="sub" id="compras-sub"></p>
+
+      <label class="interruptor">
+        <input type="checkbox" id="chk-alacena">
+        <span class="pista"></span>
+        <span data-t="compras.incluirAlacena">Incluir lo de alacena</span>
+      </label>
+
+      <div id="compras-lista" style="margin-top:18px"></div>
+      <div class="vacio oculto" id="compras-vacia">
+        <div class="vacio-icono">🧺</div>
+        <p data-t="compras.vacia"></p>
+      </div>
+
+      <div class="acciones oculto" id="compras-acciones">
+        <button class="btn btn-oro" id="btn-copiar" data-t="compras.copiar">Copiar lista</button>
+      </div>
+    </section>
+
+    <!-- ============ ALACENA ============ -->
+    <section class="vista oculto" id="vista-alacena">
+      <h2 class="titulo-seccion" data-t="alacena.titulo">Tu alacena</h2>
+      <p class="sub" data-t="alacena.intro"></p>
+
+      <div class="progreso-caja">
+        <div class="progreso-riel"><div class="progreso-barra" id="progreso-barra" style="width:0%"></div></div>
+        <p class="progreso-texto" id="progreso-texto"></p>
+      </div>
+
+      <div id="alacena-lista"></div>
+    </section>
+
+  </div>
+
+  <!-- ============ MODAL DE RECETA ============ -->
+  <div class="modal-fondo" id="modal-fondo" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <div class="modal" id="modal">
+      <button class="modal-cerrar" id="modal-cerrar" aria-label="Cerrar">✕</button>
+      <div id="modal-contenido"></div>
+    </div>
+  </div>
+
+  <div class="aviso" id="aviso"></div>
+
+  <script>const IDIOMAS = {}; function registerLang(cod, dic) { IDIOMAS[cod] = dic; }</script>
+  <script src="language/es.js"></script>
+  <script src="language/en.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <!-- Baño de color sobre toda la página. Va último para quedar encima. -->
+  <div class="velo-global" aria-hidden="true"></div>
+
+</body>
+</html>

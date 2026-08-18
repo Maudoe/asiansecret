@@ -1,0 +1,1214 @@
+/* ============ ASIANSECRET ============
+   Paleta tomada del logo:
+     dorado #C9A961 (brillo #E6CF81) · rojo #9A2F23 · blanco cálido #FBF8EE
+   El verde entra como acento de lo fresco y vegetariano.                    */
+
+:root {
+  --negro: #0a0908;
+  --negro-2: #12100e;
+  --carta: #16130f;
+  --carta-alta: #1d1913;
+  --borde: #2e2620;
+
+  --oro: #c9a961;
+  --oro-claro: #e6cf81;
+  --oro-oscuro: #8a7440;
+  --oro-rgb: 201, 169, 97;
+
+  --rojo: #b0342a;
+  --rojo-claro: #d1483a;
+  --rojo-profundo: #6e1f17;
+  --rojo-rgb: 176, 52, 42;
+
+  /* Azul tinta: no sale del logo, entra como base fría. Las fotos de comida
+     son todas cálidas y sobre un fondo cálido se aplastaban en una misma
+     papilla naranja. Contra el azul saltan, y el dorado gana presencia. */
+  --tinta: #1c3460;
+  --tinta-rgb: 28, 52, 96;
+  --tinta-honda: #0e1c38;
+
+  --verde: #4d8a63;
+  --verde-claro: #6dae82;
+  --verde-rgb: 77, 138, 99;
+
+  --blanco: #fbf8ee;
+  /* levantado respecto del original: el velo global apaga un poco todo y el
+     texto secundario perdía legibilidad. */
+  --tenue: #a89c8e;
+
+  --radio: 14px;
+  --sombra: 0 18px 50px rgba(0, 0, 0, 0.65);
+  --transicion: 320ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  font-size: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Los adornos de la cabecera se dibujan a propósito más grandes que su caja.
+   El guardia va en html, que es quien tiene el scroll: en body no hace nada. */
+html { overflow-x: clip; }
+
+body {
+  min-height: 100vh;
+
+  color: var(--blanco);
+  background: var(--negro);
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* La imagen cubre la pantalla entera y queda fija: no se mueve con el scroll,
+   así que el contenido pasa por delante de una escena quieta. Con "cover" el
+   disco se ubica solo, sin importar la proporción de la ventana. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: url("../assets/fondo2.jpg") center center / cover no-repeat;
+}
+
+/* El velo que hace que la imagen sea fondo y no ilustración. Dos capas:
+   un oscurecido que baja hacia el pie, donde se acumula el contenido, y un
+   apagado del centro, que es donde cae el disco rojo y donde más molesta.
+   Es el punto en el que la imagen se sigue leyendo entera y el texto encima
+   no pelea: más claro y los nombres de los países se pierden sobre el disco. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(8, 14, 28, 0.5) 0%, rgba(4, 7, 14, 0.78) 100%),
+    radial-gradient(ellipse 86% 66% at 50% 26%, transparent 10%, rgba(6, 5, 5, 0.34) 78%);
+}
+
+h1, h2, h3, .serif {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.oro { color: var(--oro); }
+.rojo { color: var(--rojo-claro); }
+.verde { color: var(--verde); }
+.tenue { color: var(--tenue); }
+.oculto { display: none !important; }
+
+.envoltorio { max-width: 1180px; margin: 0 auto; padding: 0 22px 100px; }
+
+
+/* ---------------- encabezado ---------------- */
+.cabecera {
+  padding: 34px 0 22px;
+  text-align: center;
+  position: relative;
+  isolation: isolate;
+}
+
+/* El resplandor detrás del logo lo pone ahora la propia imagen de fondo: el
+   disco rojo y el anillo dorado están justo ahí. Sólo queda un rebote suave
+   para despegar el PNG del disco, que si no se confunden en un solo bulto. */
+.cabecera::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -30px;
+  left: 50%;
+  width: min(520px, 100%);
+  height: 340px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: radial-gradient(ellipse 40% 44% at 50% 46%, rgba(6, 5, 5, 0.42), transparent 72%);
+  filter: blur(6px);
+  transition: opacity var(--transicion), height var(--transicion);
+}
+.logo {
+  width: min(320px, 72vw);
+  display: block;
+  margin: 0 auto;
+  /* drop-shadow sigue el recorte del PNG, no su caja: el resplandor sale del
+     contorno real del logo. Tres capas: un halo blanco pegado al borde, uno
+     dorado más abierto, y una sombra oscura abajo que lo despega del fondo. */
+  filter:
+    drop-shadow(0 0 14px rgba(255, 246, 224, 0.55))
+    drop-shadow(0 0 44px rgba(var(--oro-rgb), 0.5))
+    drop-shadow(0 0 90px rgba(var(--oro-rgb), 0.28))
+    drop-shadow(0 10px 26px rgba(0, 0, 0, 0.6));
+}
+
+/* Lema e intro caen sobre el rojo del disco, así que llevan sombra propia:
+   sin ella el dorado sobre rojo pierde casi todo el contraste. */
+.lema {
+  margin-top: -6px;
+  font-size: 0.72rem;
+  letter-spacing: 6px;
+  color: var(--oro-claro);
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 0, 0, 0.8);
+}
+.intro {
+  margin-top: 12px;
+  color: #c6bcae;
+  font-size: 0.95rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 0 26px rgba(0, 0, 0, 0.8);
+}
+
+/* Dentro de una sección el logo estorba: se achica y el lema se va. */
+.cabecera { transition: padding var(--transicion); }
+.cabecera.compacta { padding: 22px 0 14px; }
+.cabecera.compacta .logo { width: min(150px, 40vw); }
+.cabecera.compacta .lema,
+.cabecera.compacta .intro { display: none; }
+/* Con el logo chico el mismo halo se concentra y queda como un manchón:
+   se ensancha y se baja la intensidad. */
+.cabecera.compacta::before {
+  height: 300px;
+  top: -78px;
+  width: min(700px, 145%);
+  opacity: 0.5;
+}
+.logo { transition: width var(--transicion); }
+
+/* Filete dorado de separación, con degradado a los costados. */
+.filete {
+  height: 1px;
+  margin: 22px 0;
+  background: linear-gradient(90deg, transparent, var(--oro-oscuro) 18%, var(--oro) 50%, var(--oro-oscuro) 82%, transparent);
+  opacity: 0.55;
+}
+
+/* ---------------- navegación ---------------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* Se sale del ancho del contenedor para tocar los dos bordes de la pantalla:
+     el fondo y la línea de abajo cortaban a la mitad y quedaban colgando.
+     Los márgenes negativos la estiran y el padding devuelve el contenido a su
+     lugar. Sin transform, que rompería el sticky. */
+  margin-inline: calc(50% - 50vw);
+  padding: 10px calc(50vw - 50%);
+  background: linear-gradient(180deg, rgba(10, 9, 8, 0.96), rgba(10, 9, 8, 0.75));
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--borde);
+}
+/* Filete dorado bajo la línea, también de punta a punta. */
+.nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent, rgba(var(--oro-rgb), 0.32) 22%, rgba(var(--oro-rgb), 0.55) 50%, rgba(var(--oro-rgb), 0.32) 78%, transparent);
+  pointer-events: none;
+}
+.nav-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: var(--tenue);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: color var(--transicion);
+}
+.nav-btn:hover { color: var(--blanco); }
+.nav-btn.activo { color: var(--oro); }
+.nav-btn.activo::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 4px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--oro), transparent);
+}
+.nav-btn .globo {
+  display: inline-block;
+  min-width: 19px;
+  margin-left: 7px;
+  padding: 1px 6px;
+  border-radius: 20px;
+  background: var(--rojo);
+  color: var(--blanco);
+  font-size: 0.68rem;
+  font-weight: 800;
+  vertical-align: 1px;
+}
+
+/* ---------------- filtros ---------------- */
+.barra-filtros { margin: 26px 0 8px; }
+.titulo-seccion {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+.sub { color: var(--tenue); font-size: 0.9rem; margin-bottom: 16px; }
+
+.buscador {
+  width: 100%;
+  background: var(--carta);
+  border: 1px solid var(--borde);
+  border-radius: 40px;
+  color: var(--blanco);
+  font-size: 0.95rem;
+  padding: 13px 20px;
+  outline: none;
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+.buscador::placeholder { color: #6b6259; }
+.buscador:focus {
+  border-color: var(--oro);
+  box-shadow: 0 0 0 3px rgba(var(--oro-rgb), 0.12);
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 6px; }
+.chip {
+  background: var(--carta);
+  border: 1px solid var(--borde);
+  border-radius: 40px;
+  color: var(--tenue);
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 9px 16px;
+  cursor: pointer;
+  transition: all var(--transicion);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.chip:hover { border-color: var(--oro-oscuro); color: var(--blanco); transform: translateY(-1px); }
+.chip.activo {
+  background: linear-gradient(135deg, var(--oro), var(--oro-oscuro));
+  border-color: var(--oro-claro);
+  color: #17130c;
+  box-shadow: 0 6px 18px rgba(var(--oro-rgb), 0.22);
+}
+.chip.dulce.activo { background: linear-gradient(135deg, var(--rojo-claro), var(--rojo-profundo)); color: var(--blanco); border-color: var(--rojo-claro); }
+
+/* Aire entre la navegación y el contenido de cada sección. */
+.vista { padding-top: 22px; }
+.vista .pais-hero { margin-top: 0; }
+
+/* ---------------- pantalla de países ---------------- */
+/* Es lo primero que se ve: banderas grandes y nada más. */
+.grilla-paises {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+  gap: 22px;
+  margin-top: 8px;
+}
+.pais-carta {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  font: inherit;
+  color: inherit;
+}
+.pais-marco {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 16 / 9;
+  background: var(--carta);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.62);
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+.pais-marco img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Barrido dorado, el mismo gesto que ya tienen las tarjetas de receta. */
+.pais-marco::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 38%, rgba(var(--oro-rgb), 0.3) 50%, transparent 62%);
+  transform: translateX(-115%);
+  transition: transform 780ms cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.pais-carta:hover .pais-marco,
+.pais-carta:focus-visible .pais-marco {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(var(--oro-rgb), 0.5);
+}
+.pais-carta:hover .pais-marco img { transform: scale(1.06); }
+.pais-carta:hover .pais-marco::after { transform: translateX(115%); }
+.pais-carta:focus-visible { outline: none; }
+
+.pais-pie { padding: 14px 4px 0; }
+.pais-nombre {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.22rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--blanco);
+  transition: color var(--transicion);
+}
+.pais-carta:hover .pais-nombre { color: var(--oro-claro); }
+
+/* ---------------- cabecera del país elegido ---------------- */
+/* Reaprovecha la bandera como banner: da identidad a la sección sin
+   necesitar otra imagen, y reemplaza a la fila de chips que había antes. */
+.pais-hero {
+  position: relative;
+  border-radius: var(--radio);
+  overflow: hidden;
+  margin-top: 18px;
+  min-height: 168px;
+  display: flex;
+  border: 1px solid rgba(var(--oro-rgb), 0.42);
+  box-shadow: 0 0 0 1px rgba(6, 5, 5, 0.6), 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+.pais-hero-fondo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+.pais-hero-velo {
+  position: absolute;
+  inset: 0;
+  /* Se aclaró: el velo global ya oscurece por encima, así que este sumaba dos
+     veces y la bandera casi no se veía. Queda apenas lo necesario del lado
+     izquierdo, que es donde va el texto, y la derecha se abre casi limpia. */
+  background:
+    linear-gradient(95deg, rgba(8, 7, 6, 0.88) 0%, rgba(8, 7, 6, 0.62) 34%, rgba(8, 7, 6, 0.18) 68%, transparent 100%),
+    linear-gradient(to top, rgba(var(--tinta-rgb), 0.22), transparent 62%);
+}
+.pais-hero-texto {
+  position: relative;
+  z-index: 1;
+  padding: 20px 26px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+.pais-hero-nombre {
+  font-size: clamp(1.7rem, 4vw, 2.35rem);
+  line-height: 1.1;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.9);
+}
+.pais-hero-sub { font-size: 0.85rem; color: var(--oro); letter-spacing: 1.2px; }
+/* Con "todos los países" no hay bandera que mostrar. */
+.pais-hero.sin-pais { min-height: 0; border: 0; }
+.pais-hero.sin-pais .pais-hero-fondo,
+.pais-hero.sin-pais .pais-hero-velo,
+.pais-hero.sin-pais .pais-hero-nombre,
+.pais-hero.sin-pais .pais-hero-sub { display: none; }
+.pais-hero.sin-pais .pais-hero-texto { padding: 14px 0 0; }
+
+/* ---------------- volver ---------------- */
+.volver {
+  align-self: flex-start;
+  background: none;
+  border: 0;
+  color: var(--tenue);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 16px 2px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  transition: color var(--transicion);
+}
+.volver:hover { color: var(--oro); }
+.volver-flecha { font-size: 1.15rem; transition: transform var(--transicion); }
+.volver:hover .volver-flecha { transform: translateX(-4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .pais-marco, .pais-marco img, .pais-marco::after, .volver-flecha { transition: none; }
+}
+
+/* ---------------- selector de países ---------------- */
+/* Los JPG ya vienen con marco dorado, así que el chip no le suma otro borde:
+   solo lo recorta y le pone una sombra para despegarlo del fondo. */
+.chips.banderas { gap: 9px; }
+.bandera-chip { padding: 6px 14px 6px 7px; }
+.bandera {
+  width: 34px;
+  height: 21px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.55);
+  transition: transform var(--transicion);
+}
+.bandera-chip:hover .bandera { transform: scale(1.09) rotate(-1.4deg); }
+.bandera-chip.activo .bandera { box-shadow: 0 2px 9px rgba(0, 0, 0, 0.42); }
+.bandera-globo { font-size: 1.05rem; line-height: 1; }
+
+.tarjeta-meta .pais { display: inline-flex; align-items: center; gap: 6px; }
+.bandera-mini {
+  width: 19px;
+  height: 12px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+.bandera-modal {
+  width: 26px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-right: 7px;
+  vertical-align: -3px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 560px) {
+  .bandera-chip span:not(.bandera-globo) { display: none; }
+  .bandera-chip { padding: 6px 9px; }
+}
+
+/* ---------------- grilla de recetas ---------------- */
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.tarjeta {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  /* Dorado tenue en reposo, no gris: las tarjetas son fotos a sangre y sin un
+     marco propio se derraman una sobre otra. */
+  border: 1px solid rgba(var(--oro-rgb), 0.55);
+  border-radius: var(--radio);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  background: var(--carta);
+  padding: 0;
+  transition: transform var(--transicion), border-color var(--transicion), box-shadow var(--transicion);
+}
+.tarjeta {
+  box-shadow: 0 0 0 1px rgba(6, 5, 5, 0.75), 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+.tarjeta:hover {
+  transform: translateY(-5px);
+  border-color: var(--oro-claro);
+  box-shadow:
+    0 0 0 1px rgba(6, 5, 5, 0.75),
+    0 0 0 4px rgba(var(--oro-rgb), 0.2),
+    0 20px 44px rgba(0, 0, 0, 0.62);
+}
+.tarjeta:focus-visible { outline: 2px solid var(--oro); outline-offset: 2px; }
+
+/* --- la foto ocupa toda la tarjeta --- */
+.tarjeta-foto { position: absolute; inset: 0; overflow: hidden; }
+.tarjeta-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 720ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tarjeta:hover .tarjeta-foto img { transform: scale(1.07); }
+
+/* Mientras no hay foto: mosaico teñido según la categoría, con su ícono.
+   Cada categoría tiene su tono para que la grilla no sea un bloque plano. */
+.tarjeta-icono {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  font-size: 3.4rem;
+  opacity: 0.9;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.7));
+}
+.tarjeta-foto.sin-foto { background: linear-gradient(160deg, var(--tinte, #2a2119), #100e0b 78%); }
+.tarjeta-foto.sin-foto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 34%, rgba(255, 255, 255, 0.07), transparent 62%);
+}
+.tarjeta-foto.sin-foto .tarjeta-icono { display: grid; }
+
+.tarjeta[data-cat="fideos"]      { --tinte: #6d2d1c; }
+.tarjeta[data-cat="pollo"]       { --tinte: #6b4f1a; }
+.tarjeta[data-cat="carne"]       { --tinte: #64201a; }
+.tarjeta[data-cat="cerdo"]       { --tinte: #6a2f36; }
+.tarjeta[data-cat="mariscos"]    { --tinte: #1f4655; }
+.tarjeta[data-cat="arroz"]       { --tinte: #55452a; }
+.tarjeta[data-cat="vegetariano"] { --tinte: #2b5540; }
+.tarjeta[data-cat="sopas"]       { --tinte: #3a4a52; }
+.tarjeta[data-cat="reposteria"]  { --tinte: #5d3450; }
+
+/* --- el overlay: oscurece de abajo hacia arriba para que se lea el texto,
+       y tiñe la foto de rojo y oro para unificar fotos de temperaturas
+       distintas. Sin esto, cada plato tira para un lado. --- */
+.tarjeta-velo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top,
+      rgba(8, 7, 6, 0.97) 0%,
+      rgba(8, 7, 6, 0.9) 24%,
+      rgba(8, 7, 6, 0.52) 48%,
+      rgba(8, 7, 6, 0.12) 72%,
+      rgba(8, 7, 6, 0.3) 100%),
+    linear-gradient(to top, rgba(110, 31, 23, 0.34) 0%, transparent 58%),
+    linear-gradient(to bottom, rgba(var(--oro-rgb), 0.14) 0%, transparent 34%);
+  transition: opacity var(--transicion);
+}
+.tarjeta:hover .tarjeta-velo { opacity: 0.88; }
+
+/* Barrido dorado, encima de todo menos del texto. */
+.tarjeta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(115deg, transparent 35%, rgba(var(--oro-rgb), 0.16) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.tarjeta:hover::after { transform: translateX(120%); }
+
+/* --- texto sobre la foto --- */
+.tarjeta-cuerpo {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 2;
+  padding: 0 15px 15px;
+}
+.tarjeta-nombre {
+  font-family: Georgia, serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.22;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+}
+.tarjeta-nativo {
+  margin-top: 3px;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--oro);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+.tarjeta-nativo .fon { color: var(--tenue); font-size: 0.74rem; }
+.tarjeta-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: var(--tenue);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+}
+.tarjeta-meta .pais { color: var(--blanco); font-weight: 600; opacity: 0.86; }
+
+/* Tiempo arriba a la izquierda, como una etiqueta de carta. */
+.tarjeta-tiempo {
+  position: absolute;
+  top: 11px;
+  left: 11px;
+  z-index: 2;
+  padding: 4px 10px;
+  border-radius: 40px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--blanco);
+  background: rgba(8, 7, 6, 0.66);
+  border: 1px solid rgba(var(--oro-rgb), 0.28);
+  backdrop-filter: blur(6px);
+}
+
+.marca-elegida {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--oro);
+  color: #17130c;
+  font-weight: 900;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: scale(0.5);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  transition: all var(--transicion);
+}
+.tarjeta.elegida .marca-elegida { opacity: 1; transform: scale(1); }
+.tarjeta.elegida {
+  border-color: var(--oro-claro);
+  box-shadow:
+    0 0 0 1px rgba(6, 5, 5, 0.75),
+    0 0 0 3px rgba(var(--oro-rgb), 0.42),
+    0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.puntos-dif { display: inline-flex; gap: 3px; vertical-align: middle; }
+.punto { width: 5px; height: 5px; border-radius: 50%; background: var(--borde); }
+.punto.on { background: var(--oro); }
+
+/* ---------------- vacío ---------------- */
+.vacio {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--tenue);
+  border: 1px dashed var(--borde);
+  border-radius: var(--radio);
+}
+.vacio-icono { font-size: 2.4rem; margin-bottom: 10px; opacity: 0.6; }
+
+/* ---------------- listas (compras / alacena) ---------------- */
+.bloque {
+  background: linear-gradient(165deg, var(--carta-alta), var(--carta));
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.bloque-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  color: var(--oro);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.bloque-titulo::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--oro-oscuro), transparent);
+  opacity: 0.5;
+}
+
+.lista { list-style: none; }
+.lista li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 2px;
+  border-bottom: 1px solid rgba(46, 38, 32, 0.6);
+}
+.lista li:last-child { border-bottom: none; }
+.lista .nombre { flex: 1; }
+.lista .cant { color: var(--oro); font-weight: 700; white-space: nowrap; }
+.lista .para { font-size: 0.72rem; color: var(--tenue); }
+
+/* Casilla dorada, hecha a mano para que combine con el resto. */
+.casilla {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  border: 1.5px solid var(--oro-oscuro);
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transicion);
+}
+.casilla:hover { border-color: var(--oro); }
+.casilla::after {
+  content: "✓";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #17130c;
+  font-size: 0.78rem;
+  font-weight: 900;
+  opacity: 0;
+  transform: scale(0.4);
+  transition: all var(--transicion);
+}
+.casilla.marcada { background: var(--oro); border-color: var(--oro-claro); }
+.casilla.marcada::after { opacity: 1; transform: scale(1); }
+li.hecha .nombre, li.hecha .cant { opacity: 0.4; text-decoration: line-through; }
+
+/* ---------------- botones ---------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 40px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 13px 26px;
+  cursor: pointer;
+  transition: all var(--transicion);
+  font-family: inherit;
+}
+.btn-oro {
+  background: linear-gradient(135deg, var(--oro-claro), var(--oro) 45%, var(--oro-oscuro));
+  color: #17130c;
+  box-shadow: 0 8px 24px rgba(var(--oro-rgb), 0.22);
+}
+.btn-oro:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(var(--oro-rgb), 0.32); }
+.btn-rojo {
+  background: linear-gradient(135deg, var(--rojo-claro), var(--rojo-profundo));
+  color: var(--blanco);
+  box-shadow: 0 8px 24px rgba(var(--rojo-rgb), 0.26);
+}
+.btn-rojo:hover { transform: translateY(-2px); }
+.btn-linea {
+  background: transparent;
+  border: 1px solid var(--oro-oscuro);
+  color: var(--oro);
+}
+.btn-linea:hover { border-color: var(--oro); background: rgba(var(--oro-rgb), 0.08); }
+.btn:active { transform: translateY(0) scale(0.985); }
+.btn-ancho { width: 100%; }
+.acciones { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+
+/* interruptor */
+.interruptor { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.88rem; color: var(--tenue); }
+.interruptor input { display: none; }
+.pista {
+  width: 42px; height: 23px; border-radius: 40px;
+  background: var(--borde); position: relative; transition: background var(--transicion);
+}
+.pista::after {
+  content: ""; position: absolute; top: 2.5px; left: 3px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--tenue); transition: all var(--transicion);
+}
+.interruptor input:checked + .pista { background: rgba(var(--oro-rgb), 0.3); }
+.interruptor input:checked + .pista::after { left: 21px; background: var(--oro); }
+
+/* ---------------- progreso de alacena ---------------- */
+.progreso-caja { margin: 14px 0 22px; }
+.progreso-riel { height: 6px; border-radius: 6px; background: var(--borde); overflow: hidden; }
+.progreso-barra {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--oro-oscuro), var(--oro-claro));
+  transition: width 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.progreso-texto { margin-top: 8px; font-size: 0.86rem; color: var(--tenue); }
+
+/* ============================================================
+   MODAL — la pieza central
+   ============================================================ */
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(4, 3, 3, 0.72);
+  backdrop-filter: blur(16px) saturate(120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 360ms ease;
+}
+.modal-fondo.abierto { opacity: 1; pointer-events: auto; }
+
+.modal {
+  position: relative;
+  width: min(1060px, 100%);
+  max-height: min(88vh, 860px);
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: linear-gradient(170deg, #1c1811 0%, var(--carta) 42%, #100e0b 100%);
+  /* Marco dorado de dos hilos: el borde en oro pleno y, por fuera, un anillo
+     oscuro que lo separa del fondo desenfocado. Sin ese segundo hilo el dorado
+     se funde con lo que haya detrás y el marco se pierde. */
+  border: 2px solid var(--oro-claro);
+  border-radius: 20px;
+  box-shadow:
+    0 0 0 1px rgba(6, 5, 5, 0.92),
+    0 0 0 6px rgba(var(--oro-rgb), 0.28),
+    0 0 0 7px rgba(6, 5, 5, 0.55),
+    var(--sombra),
+    0 0 110px rgba(var(--oro-rgb), 0.26);
+  /* Entrada con resorte: sube, escala y se asienta. */
+  transform: translateY(26px) scale(0.965);
+  opacity: 0;
+  transition: transform 460ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms ease;
+}
+.modal-fondo.abierto .modal { transform: translateY(0) scale(1); opacity: 1; }
+
+/* Brillo sobre el filete de arriba: con el borde entero en oro, esto ya no es
+   el marco sino un reflejo, para que el dorado no quede plano. */
+.modal::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  z-index: 4;
+  background: linear-gradient(90deg, transparent, rgba(255, 246, 224, 0.85) 38%, rgba(255, 252, 240, 0.95) 50%, rgba(255, 246, 224, 0.85) 62%, transparent);
+  border-radius: 20px 20px 0 0;
+  pointer-events: none;
+}
+
+
+.modal-icono {
+  font-size: 3.1rem;
+  line-height: 1;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.6));
+}
+
+.modal-datos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.dato {
+  border: 1px solid var(--borde);
+  border-radius: 40px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  color: var(--tenue);
+  background: rgba(0, 0, 0, 0.25);
+}
+.dato strong { color: var(--oro); font-weight: 700; }
+
+
+/* ============ modal a dos columnas ============
+   La foto ocupa una columna entera de arriba abajo y no scrollea: el plato se
+   ve completo mientras leés. La receta scrollea al lado. Antes la foto era una
+   banda de 16:7 arriba de todo y se veía la mitad del plato. */
+.modal-doble {
+  display: grid;
+  grid-template-columns: minmax(0, 43fr) minmax(0, 57fr);
+  /* minmax(0, 1fr) en la fila y min-height 0 en las columnas: sin eso la
+     columna de texto crece con su contenido, empuja la fila más allá del tope
+     del modal y el nombre sobre la foto queda recortado afuera. */
+  grid-template-rows: minmax(0, 1fr);
+  max-height: min(88vh, 860px);
+}
+.modal-lado-foto,
+.modal-lado-texto { min-height: 0; }
+
+/* ---- columna de la foto ---- */
+.modal-lado-foto {
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  background: linear-gradient(160deg, var(--tinte, #241d16), #0c0a08);
+}
+.modal-lado-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.modal-doble[data-cat="fideos"]      { --tinte: #6d2d1c; }
+.modal-doble[data-cat="pollo"]       { --tinte: #6b4f1a; }
+.modal-doble[data-cat="carne"]       { --tinte: #64201a; }
+.modal-doble[data-cat="cerdo"]       { --tinte: #6a2f36; }
+.modal-doble[data-cat="mariscos"]    { --tinte: #1f4655; }
+.modal-doble[data-cat="arroz"]       { --tinte: #55452a; }
+.modal-doble[data-cat="vegetariano"] { --tinte: #2b5540; }
+.modal-doble[data-cat="sopas"]       { --tinte: #3a4a52; }
+.modal-doble[data-cat="reposteria"]  { --tinte: #5d3450; }
+
+.modal-lado-foto .modal-icono {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  font-size: 4.6rem;
+  filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.7));
+}
+.modal-lado-foto.sin-foto .modal-icono { display: grid; }
+
+/* Sólo el pie, lo justo para que se lea el nombre: la foto tiene que verse. */
+.modal-foto-velo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(6, 5, 5, 0.94) 0%, rgba(6, 5, 5, 0.66) 18%, rgba(6, 5, 5, 0.12) 40%, transparent 62%),
+    linear-gradient(to right, rgba(6, 5, 5, 0.28), transparent 34%);
+}
+.modal-rotulo {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 0 26px 24px;
+}
+.modal-titulo {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.14;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.95);
+}
+.modal-nativo {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: var(--oro-claro);
+  letter-spacing: 0.4px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
+}
+.modal-nativo .fon { color: #c6bcae; font-size: 0.86rem; }
+
+/* ---- columna de la receta ---- */
+.modal-lado-texto {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 28px 30px 30px;
+  border-left: 1px solid rgba(var(--oro-rgb), 0.22);
+}
+.modal-lado-texto::-webkit-scrollbar { width: 8px; }
+.modal-lado-texto::-webkit-scrollbar-track { background: transparent; }
+.modal-lado-texto::-webkit-scrollbar-thumb {
+  background: rgba(var(--oro-rgb), 0.28);
+  border-radius: 8px;
+}
+.modal-lado-texto::-webkit-scrollbar-thumb:hover { background: rgba(var(--oro-rgb), 0.5); }
+
+.modal-desc { color: var(--tenue); font-size: 0.95rem; line-height: 1.6; }
+/* Deja libre la esquina donde vive el botón de cerrar. */
+.modal-lado-texto .modal-seccion:first-child { padding-right: 46px; }
+.modal-datos { justify-content: flex-start; }
+
+/* La lista de ingredientes vuelve a una columna: la caja es más angosta. */
+@media (min-width: 560px) { .ing-lista { columns: 1; } }
+
+/* ---- apilado en pantallas angostas ---- */
+@media (max-width: 880px) {
+  .modal-doble {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .modal-lado-foto { min-height: 0; aspect-ratio: 4 / 3; }
+  .modal-lado-texto {
+    border-left: 0;
+    border-top: 1px solid rgba(var(--oro-rgb), 0.22);
+    padding: 22px 20px 26px;
+  }
+}
+
+.modal-seccion { margin-bottom: 26px; }
+.modal-seccion:last-child { margin-bottom: 0; }
+.modal-seccion h3 {
+  font-size: 0.82rem;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: var(--oro);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.modal-seccion h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(var(--oro-rgb), 0.4), transparent);
+}
+
+.ing-lista { list-style: none; column-gap: 26px; }
+@media (min-width: 560px) { .ing-lista { columns: 2; } }
+.ing-lista li {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 7px 0;
+  border-bottom: 1px dashed rgba(46, 38, 32, 0.7);
+  break-inside: avoid;
+  font-size: 0.9rem;
+}
+.ing-lista .c { color: var(--oro); font-weight: 700; white-space: nowrap; }
+.estrella { color: var(--oro-oscuro); font-size: 0.7rem; }
+
+.pasos { list-style: none; counter-reset: paso; }
+.pasos li {
+  position: relative;
+  counter-increment: paso;
+  padding: 0 0 20px 46px;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+.pasos li strong { color: var(--oro-claro); font-weight: 700; }
+.modal-desc strong { color: var(--blanco); font-weight: 600; }
+
+.pasos li::before {
+  content: counter(paso);
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--oro-oscuro);
+  background: rgba(var(--oro-rgb), 0.08);
+  color: var(--oro);
+  font-family: Georgia, serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+/* Línea que une los pasos, como un recorrido. */
+.pasos li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(180deg, var(--oro-oscuro), transparent);
+  opacity: 0.45;
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--borde);
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--tenue);
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 3;
+  transition: all var(--transicion);
+}
+.modal-cerrar:hover {
+  color: var(--blanco);
+  border-color: var(--oro);
+  transform: rotate(90deg);
+  background: rgba(var(--rojo-rgb), 0.25);
+}
+
+/* Aparición escalonada del contenido, ya abierto el modal. */
+.modal-fondo.abierto .anim {
+  animation: subir 560ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.modal-fondo.abierto .anim:nth-child(1) { animation-delay: 90ms; }
+.modal-fondo.abierto .anim:nth-child(2) { animation-delay: 150ms; }
+.modal-fondo.abierto .anim:nth-child(3) { animation-delay: 210ms; }
+.modal-fondo.abierto .anim:nth-child(4) { animation-delay: 270ms; }
+@keyframes subir {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------------- velo global ---------------- */
+/* Este va POR ENCIMA de todo, banderas y tarjetas incluidas — no entre la foto
+   y el contenido como el aura de body::after. Es la diferencia entre teñir el
+   fondo y teñir la página: sin esta capa las banderas quedan al 100 % de
+   saturación y se leen como imágenes pegadas encima; con ella entran en el
+   mismo baño que el resto y todo se ve de la misma pieza.
+
+   Va por debajo del modal (z-index 100) y del aviso (200), que tienen que
+   quedar limpios. pointer-events en none para que no se coma los clics. */
+.velo-global {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 95% 78% at 50% -6%, rgba(var(--tinta-rgb), 0.3), transparent 76%),
+    linear-gradient(180deg, rgba(14, 28, 56, 0.26) 0%, rgba(6, 5, 5, 0.2) 100%);
+}
+
+
+/* ---------------- aviso flotante ---------------- */
+.aviso {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%, 24px);
+  z-index: 200;
+  background: linear-gradient(135deg, var(--carta-alta), var(--carta));
+  border: 1px solid var(--oro-oscuro);
+  border-radius: 40px;
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: var(--sombra);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 380ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.aviso.visible { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------------- idioma ---------------- */
+.idiomas {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  display: inline-flex;
+  gap: 3px;
+  background: var(--carta);
+  border: 1px solid var(--borde);
+  border-radius: 40px;
+  padding: 3px;
+}
+.idioma-btn {
+  background: none;
+  border: none;
+  color: var(--tenue);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 11px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all var(--transicion);
+}
+.idioma-btn.activo { background: var(--oro); color: #17130c; }
+
+@media (max-width: 620px) {
+  .envoltorio { padding: 0 15px 90px; }
+  .modal-cima { padding: 26px 20px 18px; }
+  .modal-cuerpo { padding: 20px 20px 26px; }
+  .modal-titulo { font-size: 1.5rem; }
+  .nav-btn { padding: 9px 12px; font-size: 0.84rem; }
+  .idiomas { position: static; margin: 0 auto 14px; }
+  .cabecera { padding-top: 18px; }
+  .modal-foto { margin: -26px -20px 16px; }
+  .pais-hero-texto { padding: 16px 18px 18px; }
+  .grilla { gap: 13px; }
+}
+
+/* Respeta a quien pidió menos movimiento en el sistema. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,133 @@
+FOTOS DE LOS PLATOS
+
+24 de 83 listas.
+
+Pone aca una imagen por receta, con el nombre de archivo exacto de la lista.
+Las marcadas con [x] ya estan.
+
+  formato    .jpg
+  proporcion vertical 4:5 (por ejemplo 900 x 1125) — es la forma de la tarjeta
+  peso       apuntar a 100-160 KB
+
+Si la foto viene horizontal no importa: se recorta a lo alto completo y se
+centra. Lo que si importa es que el plato no quede pegado al borde de abajo,
+porque ahi va el nombre sobre un degradado oscuro.
+
+La que falte cae en el mosaico con el icono de su categoria, asi que se
+pueden ir agregando de a poco sin romper nada.
+
+================================================================
+
+--- CHINA  (11/11) ---
+
+  [x] chongqing_noodles.jpg     Fideos de Chongqing  ·  重庆小面
+  [x] dan_dan.jpg               Dan Dan Mian  ·  担担面
+  [x] kung_pao.jpg              Pollo Kung Pao  ·  宫保鸡丁
+  [x] mongolian_beef.jpg        Carne Mongoliana  ·  蒙古牛肉
+  [x] char_siu.jpg              Char Siu  ·  叉烧
+  [x] twice_cooked_pork.jpg     Cerdo Dos Veces Cocido  ·  回锅肉
+  [x] camarones_ajo_chile.jpg   Camarones al Ajo y Chile  ·  蒜蓉辣椒虾
+  [x] arroz_yangzhou.jpg        Arroz Frito de Yangzhou  ·  扬州炒饭
+  [x] mapo_tofu.jpg             Mapo Tofu  ·  麻婆豆腐
+  [x] wonton_soup.jpg           Sopa de Wontons  ·  馄饨汤
+  [x] sopa_agripicante.jpg      Sopa Agripicante  ·  酸辣汤
+
+--- COREA  (13/20) ---
+
+  [x] japchae.jpg               Japchae  ·  잡채
+  [x] dakgalbi.jpg              Dakgalbi  ·  닭갈비
+  [x] bulgogi.jpg               Bulgogi  ·  불고기
+  [x] bibimbap.jpg              Bibimbap  ·  비빔밥
+  [x] kimchi.jpg                Kimchi  ·  김치
+  [x] tteokbokki.jpg            Tteokbokki  ·  떡볶이
+  [ ] kimbap.jpg                Kimbap  ·  김밥
+  [x] yangnyeom_chicken.jpg     Yangnyeom Chicken  ·  양념치킨
+  [x] samgyeopsal.jpg           Samgyeopsal  ·  삼겹살
+  [x] kimchi_jjigae.jpg         Kimchi Jjigae  ·  김치찌개
+  [x] sundubu_jjigae.jpg        Sundubu Jjigae  ·  순두부찌개
+  [x] jajangmyeon.jpg           Jajangmyeon  ·  자장면
+  [x] haemul_pajeon.jpg         Haemul Pajeon  ·  해물파전
+  [x] samgyetang.jpg            Samgyetang  ·  삼계탕
+  [ ] galbi.jpg                 Galbi  ·  갈비
+  [ ] gamjatang.jpg             Gamjatang  ·  감자탕
+  [ ] mandu.jpg                 Mandu  ·  만두
+  [ ] bossam.jpg                Bossam  ·  보쌈
+  [ ] kongguksu.jpg             Kongguksu  ·  콩국수
+  [ ] hotteok.jpg               Hotteok  ·  호떡
+
+--- JAPÓN  (0/21) ---
+
+  [ ] yakisoba.jpg              Yakisoba  ·  焼きそば
+  [ ] pollo_teriyaki.jpg        Pollo Teriyaki  ·  鶏の照り焼き
+  [ ] karaage.jpg               Karaage  ·  唐揚げ
+  [ ] gyudon.jpg                Gyudon  ·  牛丼
+  [ ] tonkatsu.jpg              Tonkatsu  ·  とんかつ
+  [ ] salmon_teriyaki.jpg       Salmón Teriyaki  ·  鮭の照り焼き
+  [ ] katsudon.jpg              Katsudon  ·  カツ丼
+  [ ] miso_shiru.jpg            Sopa de Miso  ·  味噌汁
+  [ ] mochi.jpg                 Mochi  ·  餅
+  [ ] dorayaki.jpg              Dorayaki  ·  どら焼き
+  [ ] matcha_cookies.jpg        Galletas de Matcha  ·  抹茶クッキー
+  [ ] tonkotsu_ramen.jpg        Tonkotsu Ramen  ·  豚骨ラーメン
+  [ ] shoyu_ramen.jpg           Shoyu Ramen  ·  醤油ラーメン
+  [ ] miso_ramen.jpg            Miso Ramen  ·  味噌ラーメン
+  [ ] shio_ramen.jpg            Shio Ramen  ·  塩ラーメン
+  [ ] tantanmen.jpg             Tantanmen  ·  担々麺
+  [ ] tsukemen.jpg              Tsukemen  ·  つけ麺
+  [ ] hiyashi_chuka.jpg         Hiyashi Chuka  ·  冷やし中華
+  [ ] katsu_curry.jpg           Katsu Curry  ·  カツカレー
+  [ ] okonomiyaki.jpg           Okonomiyaki  ·  お好み焼き
+  [ ] takoyaki.jpg              Takoyaki  ·  たこ焼き
+
+--- TAILANDIA  (0/24) ---
+
+  [ ] khao_soi.jpg              Khao Soi  ·  ข้าวซอย
+  [ ] pad_thai.jpg              Pad Thai  ·  ผัดไทย
+  [ ] gai_pad_krapow.jpg        Gai Pad Krapow  ·  ไก่ผัดกะเพรา
+  [ ] tom_yum_goong.jpg         Tom Yum Goong  ·  ต้มยำกุ้ง
+  [ ] curry_verde_verduras.jpg  Curry Verde de Verduras  ·  แกงเขียวหวานผัก
+  [ ] pad_pak_boong.jpg         Pad Pak Boong  ·  ผัดผักบุ้ง
+  [ ] tom_kha_gai.jpg           Tom Kha Gai  ·  ต้มข่าไก่
+  [ ] mango_sticky_rice.jpg     Mango con Arroz Glutinoso  ·  ข้าวเหนียวมะม่วง
+  [ ] banana_roti.jpg           Roti de Banana  ·  โรตีกล้วย
+  [ ] gaeng_keow_wan.jpg        Gaeng Keow Wan  ·  แกงเขียวหวาน
+  [ ] gai_yang.jpg              Gai Yang  ·  ไก่ย่าง
+  [ ] gai_tod.jpg               Gai Tod  ·  ไก่ทอด
+  [ ] khao_man_gai.jpg          Khao Man Gai  ·  ข้าวมันไก่
+  [ ] massaman.jpg              Curry Massaman  ·  แกงมัสมั่น
+  [ ] panang.jpg                Curry Panang  ·  พะแนง
+  [ ] nam_tok.jpg               Nam Tok  ·  น้ำตกหมู
+  [ ] larb_moo.jpg              Larb Moo  ·  ลาบหมู
+  [ ] pad_see_ew.jpg            Pad See Ew  ·  ผัดซีอิ๊ว
+  [ ] pad_kee_mao.jpg           Pad Kee Mao  ·  ผัดขี้เมา
+  [ ] boat_noodles.jpg          Boat Noodles  ·  ก๋วยเตี๋ยวเรือ
+  [ ] khao_pad.jpg              Khao Pad  ·  ข้าวผัด
+  [ ] khao_niao.jpg             Khao Niao  ·  ข้าวเหนียว
+  [ ] som_tam.jpg               Som Tam  ·  ส้มตำ
+  [ ] tom_saap.jpg              Tom Saap  ·  ต้มแซ่บ
+
+--- VIETNAM  (0/1) ---
+
+  [ ] pho_bo.jpg                Phở Bò  ·  Phở bò
+
+--- HONG KONG  (0/1) ---
+
+  [ ] egg_tarts.jpg             Tartitas de Huevo  ·  蛋撻
+
+--- MALASIA  (0/1) ---
+
+  [ ] laksa.jpg                 Laksa  ·  Laksa
+
+--- SINGAPUR  (0/2) ---
+
+  [ ] hainanese_chicken.jpg     Arroz con Pollo Hainanés  ·  海南雞飯
+  [ ] chili_crab.jpg            Cangrejo al Chile  ·  辣椒螃蟹
+
+--- INDONESIA  (0/2) ---
+
+  [ ] rendang.jpg               Rendang  ·  Rendang
+  [ ] nasi_goreng.jpg           Nasi Goreng  ·  Nasi goreng
+
+================================================================
+
+Faltan 59.

@@ -1,0 +1,6 @@
+# nada de esto va al repo
+Thumbs.db
+desktop.ini
+.DS_Store
+node_modules/
+*.log
