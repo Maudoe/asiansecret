@@ -1,6 +1,6 @@
 FOTOS DE LOS PLATOS
 
-24 de 83 listas.
+25 de 83 listas.
 
 Pone aca una imagen por receta, con el nombre de archivo exacto de la lista.
 Las marcadas con [x] ya estan.
@@ -32,7 +32,7 @@ pueden ir agregando de a poco sin romper nada.
   [x] wonton_soup.jpg           Sopa de Wontons  ·  馄饨汤
   [x] sopa_agripicante.jpg      Sopa Agripicante  ·  酸辣汤
 
---- COREA  (13/20) ---
+--- COREA  (14/20) ---
 
   [x] japchae.jpg               Japchae  ·  잡채
   [x] dakgalbi.jpg              Dakgalbi  ·  닭갈비
@@ -40,7 +40,7 @@ pueden ir agregando de a poco sin romper nada.
   [x] bibimbap.jpg              Bibimbap  ·  비빔밥
   [x] kimchi.jpg                Kimchi  ·  김치
   [x] tteokbokki.jpg            Tteokbokki  ·  떡볶이
-  [ ] kimbap.jpg                Kimbap  ·  김밥
+  [x] kimbap.jpg                Kimbap  ·  김밥
   [x] yangnyeom_chicken.jpg     Yangnyeom Chicken  ·  양념치킨
   [x] samgyeopsal.jpg           Samgyeopsal  ·  삼겹살
   [x] kimchi_jjigae.jpg         Kimchi Jjigae  ·  김치찌개
@@ -130,4 +130,4 @@ pueden ir agregando de a poco sin romper nada.
 
 ================================================================
 
-Faltan 59.
+Faltan 58.
