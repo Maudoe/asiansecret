@@ -165,8 +165,8 @@ try {
   process.exit(1);
 }
 
-vm.runInContext(";globalThis.__datos={RECETAS};", ctx);
-const { RECETAS } = ctx.__datos;
+vm.runInContext(";globalThis.__datos={RECETAS,INGREDIENTES};", ctx);
+const { RECETAS, INGREDIENTES } = ctx.__datos;
 const ES = ctx.IDIOMAS.es;
 
 // ---------- comprobaciones ----------
@@ -267,6 +267,28 @@ if (conEnfasis) {
       `el modal listó ${ingLi.length} ingredientes y la receta tiene ${conEnfasis.ing.length}`);
     chk(ingLi.every((li) => li.querySelector(".c").textContent.trim().length > 0),
       "hay ingredientes sin cantidad");
+
+    // Fichas: los ingredientes que no se explican solos se pueden desplegar.
+    const conFicha = ingLi.filter((li) => li.classList.contains("con-ficha"));
+    chk(conFicha.length > 0, `ninguno de los ingredientes de ${conEnfasis.id} tiene ficha`);
+    if (conFicha.length) {
+      const li = conFicha[0];
+      chk(li.querySelector(".ing-ficha").classList.contains("oculto"),
+        "la ficha debería arrancar cerrada");
+      li.querySelector(".ing-fila").click();
+      chk(!li.querySelector(".ing-ficha").classList.contains("oculto"),
+        "el clic no abrió la ficha");
+      chk(li.querySelector(".ing-texto").textContent.length > 40, "la ficha salió vacía");
+      chk(!li.querySelector(".ing-texto").textContent.includes("**"),
+        "quedaron asteriscos sin convertir en la ficha");
+    }
+    // Y el ingrediente que además es receta ofrece ir a hacerla.
+    const conReceta = Object.entries(INGREDIENTES).filter(([, v]) => v.receta);
+    chk(conReceta.length > 0, "ningún ingrediente apunta a una receta");
+    conReceta.forEach(([i, v]) => {
+      chk(RECETAS.some((r) => r.id === v.receta), `${i} apunta a la receta inexistente ${v.receta}`);
+      chk(ES["n." + i], `${i} apunta a una receta pero no tiene ficha donde ofrecerla`);
+    });
 
     // Los ** de énfasis tienen que llegar como <strong>, nunca como texto.
     // split(/**/) es un comentario de bloque y se vuelve split() a secas: pasa

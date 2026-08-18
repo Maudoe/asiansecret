@@ -72,7 +72,7 @@ Para agregar un idioma: copiar `es.js`, traducir los valores, cambiar el código
 > Son `.js` que envuelven un JSON en vez de `.json` puros porque el navegador bloquea leer `.json`
 > locales al abrir con doble clic (CORS en `file://`). El contenido interno es JSON — se edita igual.
 
-Hoy están **español e inglés**, con 962 claves cada uno y paridad verificada.
+Hoy están **español e inglés**, con 1048 claves cada uno y paridad verificada.
 
 **La excepción:** el nombre en escritura original y su pronunciación viven en `js/data.js`,
 como `nat` y `fon`, no en `language/`. 김치 es 김치 en todos los idiomas — meterlo en los
@@ -258,6 +258,31 @@ assets/fondo.jpg    textura anterior, ya sin uso
 assets/banderas/    9 banderas, una por país (<código>.jpg)
 assets/platos/      fotos de los platos (<id receta>.jpg) + LEEME.txt
 ```
+
+## Fichas de ingrediente
+
+Nadie arranca con la alacena llena. **85 de los 143 ingredientes tienen ficha**: se tocan en la
+lista de la receta y se despliegan ahí mismo, sin abrir otra ventana.
+
+Cada una responde tres cosas: **qué es**, **dónde se consigue** y **con qué se reemplaza** si no
+aparece. Cuando algo no tiene reemplazo real, lo dice — la hoja de lima kaffir no se cambia por
+ralladura de lima y conviene saberlo antes de comprar.
+
+Los 58 restantes no la tienen a propósito: a nadie hay que explicarle qué es la sal, el ajo o un
+huevo. La ficha aparece sólo donde hace falta, marcada con un `?` al lado del nombre.
+
+Las que evitan errores concretos:
+
+- **Tteok** — son los cilindros de arroz, no el tteokbokki; el tteokbokki es un plato hecho con ellos
+- **Gochujang y gochugaru** — pasta y polvo, no se reemplazan entre sí
+- **Tofu firme y sedoso** — uno no se deshace y el otro no se puede saltear
+- **Salsa de soja clara y oscura** — la oscura no es para salar sino para dar color
+- **Aceite de sésamo** — no es para freír, se quema
+- **Chunjang** — viene crudo y hay que freírlo antes o queda amargo
+- **Kombu** — el polvo blanco no se lava, es el sabor
+
+Cuando un ingrediente se puede hacer en la app, la ficha ofrece ir directo a esa receta. Hoy
+pasa con el **kimchi** y con el **arroz glutinoso**: `INGREDIENTES[i].receta` guarda a cuál.
 
 ## Porciones
 

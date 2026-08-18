@@ -116,6 +116,15 @@ function nombreNativo(rec, clase) {
 const cantidad = (c, u) => num(c) + " " + t("u." + u);
 const porcionesDe = (rec) => porciones[rec.id] || rec.por;
 
+// La ficha de un ingrediente: qué es, dónde se consigue, con qué se
+// reemplaza. Sólo la tienen los que no se explican solos — a nadie hay que
+// contarle qué es la sal. Devuelve null si no hay nada que decir.
+function notaDe(i) {
+  const clave = "n." + i;
+  const dicho = (IDIOMAS[idioma] && IDIOMAS[idioma][clave]) || (IDIOMAS.es && IDIOMAS.es[clave]);
+  return dicho || null;
+}
+
 // ---------- navegación ----------
 function irA(nombre) {
   vista = nombre;
@@ -265,11 +274,36 @@ function pintarIngredientes(rec, ul) {
   if (!ul) return;
   ul.textContent = "";
   ingredientesPara(rec, porcionesDe(rec)).forEach(({ i, c, u }) => {
-    const li = crear("li");
-    const nombre = crear("span");
+    const info = INGREDIENTES[i] || {};
+    const nota = notaDe(i);
+    const li = crear("li", nota ? "con-ficha" : "");
+
+    const fila = crear("div", "ing-fila");
+    const nombre = crear("span", "ing-nombre");
     nombre.append(document.createTextNode(t("i." + i) + " "));
-    if (INGREDIENTES[i] && INGREDIENTES[i].alacena) nombre.append(crear("span", "estrella", "★"));
-    li.append(nombre, crear("span", "c", cantidad(c, u)));
+    if (info.alacena) nombre.append(crear("span", "estrella", "★"));
+    if (nota) nombre.append(crear("span", "ing-señal", "?"));
+    fila.append(nombre, crear("span", "c", cantidad(c, u)));
+    li.append(fila);
+
+    if (nota) {
+      // Se despliega bajo la línea en vez de abrir otra ventana: estás leyendo
+      // la lista y querés saber qué es una cosa, no irte a otro lado.
+      const ficha = crear("div", "ing-ficha oculto");
+      ficha.append(conNegritas(nota, "p", "ing-texto"));
+      if (info.receta && RECETAS.some((r) => r.id === info.receta)) {
+        const ir = crear("button", "ing-ir");
+        ir.dataset.receta = info.receta;
+        ir.textContent = t("ficha.hacerlo", { n: t("r." + info.receta + ".n") });
+        ficha.append(ir);
+      }
+      li.append(ficha);
+      fila.addEventListener("click", () => {
+        const abierta = !ficha.classList.contains("oculto");
+        ficha.classList.toggle("oculto", abierta);
+        li.classList.toggle("abierta", !abierta);
+      });
+    }
     ul.append(li);
   });
 }

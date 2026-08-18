@@ -11,6 +11,8 @@
 // sería mantener 83 cadenas idénticas cada vez que se suma una traducción.
 
 // Secciones de la lista de compras.
+// receta: cuando el ingrediente se puede hacer en la app, apunta a cuál.
+// La ficha del ingrediente ofrece ir directo a esa receta.
 const SECCIONES = ["proteina", "verdura", "seco", "salsa", "especia", "fresco", "reposteria"];
 
 // Ingredientes: sección para agrupar la compra y si es de alacena (se tiene
@@ -25,7 +27,7 @@ const INGREDIENTES = {
   cerdo_panceta:    { sec: "proteina" },
   cerdo_lomo:       { sec: "proteina" },
   cerdo_picado:     { sec: "proteina" },
-  kimchi_fermentado:{ sec: "verdura" },
+  kimchi_fermentado:{ sec: "verdura", receta: "kimchi" },
   camaron:          { sec: "proteina" },
   cangrejo:         { sec: "proteina" },
   salmon:           { sec: "proteina" },
@@ -70,7 +72,7 @@ const INGREDIENTES = {
   fideos_vidrio:    { sec: "seco" },
   fideos_ramen:     { sec: "seco" },
   arroz_jazmin:     { sec: "seco", alacena: true },
-  arroz_glutinoso:  { sec: "seco" },
+  arroz_glutinoso:  { sec: "seco", receta: "khao_niao" },
   arroz_corto:      { sec: "seco" },
   harina:           { sec: "seco", alacena: true },
   maicena:          { sec: "seco", alacena: true },
