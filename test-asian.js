@@ -107,8 +107,8 @@ const app = fs.readFileSync(`${dir}/js/app.js`, "utf8");
   chk(ES[k], `data-t huérfano: ${k}`));
 [...html.matchAll(/data-t-ph="([^"]+)"/g)].map((m) => m[1]).forEach((k) =>
   chk(ES[k], `data-t-ph huérfano: ${k}`));
-// btn-toggle se crea dentro del modal, así que no está en el HTML estático.
-const DINAMICOS = ["btn-toggle"];
+// Estos se crean dentro del modal, así que no están en el HTML estático.
+const DINAMICOS = ["btn-toggle", "ing-lista", "sel-porciones", "modal-lado-texto"];
 [...new Set([...app.matchAll(/\$\("#([\w-]+)"\)/g)].map((m) => m[1]))]
   .filter((id) => !DINAMICOS.includes(id))
   .forEach((id) => chk(html.includes(`id="${id}"`), `id faltante en HTML: ${id}`));

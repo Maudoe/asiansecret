@@ -310,7 +310,44 @@ if (play) {
 delete RECETAS[0].video;
 q("#modal-cerrar").click();
 
-// 10) cambiar de idioma no rompe nada
+// 10) porciones: el selector escala los ingredientes y la lista de compras
+const escalar = ctx.escalarCantidad;
+const opciones = ctx.opcionesPorciones;
+chk(typeof escalar === "function" && typeof opciones === "function", "falta el escalado de porciones");
+if (typeof opciones === "function") {
+  chk(JSON.stringify(opciones(4)) === JSON.stringify([2, 3, 4, 5, 6, 7, 8, 9, 10]),
+    "las opciones para una receta de 4 no son 2..10");
+  // El kimchi rinde 12: tiene que poder volver a su propio número.
+  chk(opciones(12).includes(12) && opciones(12)[0] === 2,
+    "una receta de 12 debería ofrecer 2..10 más su propio 12");
+}
+if (typeof escalar === "function") {
+  [
+    [300, "g", 2, 600], [150, "g", 1.5, 230], [7, "g", 2, 14],
+    [250, "ml", 1.5, 380], [3, "unidad", 1.5, 4.5], [1, "unidad", 1.5, 1.5],
+    [2, "cda", 1.5, 3], [4, "diente", 1.5, 6], [1, "cdta", 0.5, 0.5],
+  ].forEach(([c, u, f, esperado]) => {
+    chk(escalar(c, u, f) === esperado,
+      `escalarCantidad(${c}, "${u}", ${f}) dio ${escalar(c, u, f)} y no ${esperado}`);
+  });
+  // Nunca cae a cero: media cucharadita sigue siendo media cucharadita.
+  chk(escalar(1, "cda", 0.1) > 0 && escalar(1, "g", 0.1) > 0, "el escalado llegó a cero");
+}
+
+// y la lista de compras acompaña
+const rec0 = RECETAS.find((r) => r.por === 4 && r.ing.some((x) => x.u === "g"));
+if (rec0) {
+  const ingG = rec0.ing.find((x) => x.u === "g");
+  const solo = (grupos) => Object.values(grupos).flat().find((x) => x.id === ingG.i);
+  const base = solo(ctx.listaDeCompras([rec0.id], true));
+  const doble = solo(ctx.listaDeCompras([rec0.id], true, { [rec0.id]: 8 }));
+  chk(base && doble && doble.c > base.c * 1.8,
+    `al doblar las porciones la compra pasó de ${base && base.c} a ${doble && doble.c}`);
+  // Sin porciones declaradas tiene que dar exactamente lo escrito en la receta.
+  chk(base && base.c === ingG.c, "sin ajustar, la compra no coincide con la receta");
+}
+
+// 11) cambiar de idioma no rompe nada
 const btnEn = qa(".idioma-btn").find((b) => b.dataset.idioma === "en");
 btnEn.click();
 chk(qa(".pais-carta").length === 9 || qa("#grilla .tarjeta").length > 0, "el cambio de idioma vació la vista");

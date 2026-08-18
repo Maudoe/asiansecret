@@ -4,6 +4,7 @@ const CLAVE_SEL = "asiansecret.seleccion";
 const CLAVE_ALA = "asiansecret.alacena";
 const CLAVE_IDIOMA = "asiansecret.idioma";
 const CLAVE_TACHADOS = "asiansecret.tachados";
+const CLAVE_PORCIONES = "asiansecret.porciones";
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
@@ -26,6 +27,9 @@ if (!IDIOMAS[idioma]) idioma = "es";
 let seleccion = new Set(leer(CLAVE_SEL, []));
 let alacena = new Set(leer(CLAVE_ALA, []));
 let tachados = new Set(leer(CLAVE_TACHADOS, []));
+// { idReceta: porciones }. Sólo guarda las que se cambiaron; el resto usa
+// las porciones con las que la receta viene escrita.
+let porciones = leer(CLAVE_PORCIONES, {}) || {};
 let vista = "paises";
 let tipo = "todo";        // todo · salado · dulce
 let categoria = "todas";
@@ -110,6 +114,7 @@ function nombreNativo(rec, clase) {
   return el;
 }
 const cantidad = (c, u) => num(c) + " " + t("u." + u);
+const porcionesDe = (rec) => porciones[rec.id] || rec.por;
 
 // ---------- navegación ----------
 function irA(nombre) {
@@ -220,6 +225,10 @@ function tarjeta(rec) {
   if (nat) cuerpo.append(nat);
 
   const meta = crear("div", "tarjeta-meta");
+  // Sólo se muestra si difiere de las porciones con las que viene escrita.
+  if (porciones[rec.id] && porciones[rec.id] !== rec.por) {
+    meta.append(crear("span", "tarjeta-porciones", t("receta.porciones", { n: porciones[rec.id] })));
+  }
   const paisEl = crear("span", "pais");
   const bandera = document.createElement("img");
   bandera.className = "bandera-mini";
@@ -247,6 +256,22 @@ function tarjeta(rec) {
 }
 
 // ---------- modal ----------
+// Se redibuja sola cada vez que cambian las porciones, así que vive aparte
+// del armado del modal.
+function pintarIngredientes(rec) {
+  const ul = $("#ing-lista");
+  if (!ul) return;
+  ul.textContent = "";
+  ingredientesPara(rec, porcionesDe(rec)).forEach(({ i, c, u }) => {
+    const li = crear("li");
+    const nombre = crear("span");
+    nombre.append(document.createTextNode(t("i." + i) + " "));
+    if (INGREDIENTES[i] && INGREDIENTES[i].alacena) nombre.append(crear("span", "estrella", "★"));
+    li.append(nombre, crear("span", "c", cantidad(c, u)));
+    ul.append(li);
+  });
+}
+
 let recetaAbierta = null;
 let ultimoFoco = null;
 
@@ -333,7 +358,33 @@ function abrirModal(id) {
   origen.prepend(banderaModal);
   datos.append(origen);
   datos.append(dato("⏱", rec.min + " " + t("receta.min")));
-  datos.append(dato("🍽", t("receta.porciones", { n: rec.por })));
+
+  // Las porciones son lo único de la ficha que se puede tocar: al cambiarlas
+  // se recalculan los ingredientes acá y en la lista de compras.
+  const selPor = crear("label", "dato dato-porciones");
+  selPor.append(document.createTextNode("🍽 "));
+  const sel = document.createElement("select");
+  sel.className = "sel-porciones";
+  sel.id = "sel-porciones";
+  sel.setAttribute("aria-label", t("receta.porcionesAjustar"));
+  opcionesPorciones(rec.por).forEach((n) => {
+    const op = document.createElement("option");
+    op.value = String(n);
+    op.textContent = t("receta.porciones", { n });
+    if (n === porcionesDe(rec)) op.selected = true;
+    sel.append(op);
+  });
+  sel.addEventListener("change", () => {
+    const n = Number(sel.value);
+    if (n === rec.por) delete porciones[rec.id];
+    else porciones[rec.id] = n;
+    guardar(CLAVE_PORCIONES, porciones);
+    pintarIngredientes(rec);
+    render();
+  });
+  selPor.append(sel);
+  datos.append(selPor);
+
   datos.append(dato(t("receta.dificultad"), t("receta.dif" + rec.dif)));
   intro.append(datos);
   ladoTexto.append(intro);
@@ -342,17 +393,11 @@ function abrirModal(id) {
   const secIng = crear("div", "modal-seccion anim");
   secIng.append(crear("h3", null, t("receta.ingredientes")));
   const ul = crear("ul", "ing-lista");
-  rec.ing.forEach(({ i, c, u }) => {
-    const li = crear("li");
-    const nombre = crear("span");
-    nombre.append(document.createTextNode(t("i." + i) + " "));
-    if (INGREDIENTES[i] && INGREDIENTES[i].alacena) nombre.append(crear("span", "estrella", "★"));
-    li.append(nombre, crear("span", "c", cantidad(c, u)));
-    ul.append(li);
-  });
+  ul.id = "ing-lista";
   secIng.append(ul);
   secIng.append(crear("p", "sub", t("receta.alacenaNota")));
   ladoTexto.append(secIng);
+  pintarIngredientes(rec);
 
   // --- pasos ---
   const secPasos = crear("div", "modal-seccion anim");
@@ -516,7 +561,7 @@ function renderSeleccion() {
   $("#seleccion-vacia").classList.toggle("oculto", hay);
   $("#seleccion-acciones").classList.toggle("oculto", !hay);
 
-  const compras = listaDeCompras([...seleccion], false);
+  const compras = listaDeCompras([...seleccion], false, porciones);
   const nIng = Object.values(compras).reduce((a, l) => a + l.length, 0);
   $("#seleccion-sub").textContent = hay
     ? t("seleccion.intro", { n: elegidas.length, ing: nIng })
@@ -525,7 +570,7 @@ function renderSeleccion() {
 
 function renderCompras() {
   const incluirAlacena = $("#chk-alacena").checked;
-  const grupos = listaDeCompras([...seleccion], incluirAlacena);
+  const grupos = listaDeCompras([...seleccion], incluirAlacena, porciones);
   const cont = $("#compras-lista");
   cont.textContent = "";
 

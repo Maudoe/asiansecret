@@ -686,12 +686,50 @@ function itemsAlacena() {
 
 // Lista de compras a partir de las recetas elegidas.
 // Agrupa por sección y suma cantidades cuando la unidad coincide.
-function listaDeCompras(ids, incluirAlacena) {
+// ---------- porciones ----------
+// De 2 a 10, más las porciones propias de la receta si caen fuera: el kimchi
+// rinde 12 y no tiene sentido que abrirlo cambie sus cantidades.
+const PORCIONES_MIN = 2;
+const PORCIONES_MAX = 10;
+
+function opcionesPorciones(base) {
+  const set = new Set();
+  for (let n = PORCIONES_MIN; n <= PORCIONES_MAX; n++) set.add(n);
+  set.add(base);
+  return [...set].sort((a, b) => a - b);
+}
+
+// Redondea a algo que se pueda medir de verdad en una cocina. 466 g no es una
+// cantidad, es un resultado de multiplicar; 470 g sí. Cada unidad tiene su
+// escalón: los huevos y las cucharadas van de medio en medio, los gramos y
+// mililitros se redondean más grueso cuanto más grandes son.
+function escalarCantidad(c, u, factor) {
+  const v = c * factor;
+  if (u === "g" || u === "ml") {
+    if (v >= 100) return Math.round(v / 10) * 10;
+    if (v >= 20) return Math.round(v / 5) * 5;
+    return Math.max(1, Math.round(v));
+  }
+  if (u === "diente") return Math.max(1, Math.round(v));
+  // unidad, cda, cdta, puñado: de medio en medio
+  return Math.max(0.5, Math.round(v * 2) / 2);
+}
+
+// Los ingredientes de una receta para la cantidad de porciones que se pida.
+function ingredientesPara(receta, porciones) {
+  const factor = (porciones || receta.por) / receta.por;
+  if (factor === 1) return receta.ing;
+  return receta.ing.map(({ i, c, u }) => ({ i, c: escalarCantidad(c, u, factor), u }));
+}
+
+// porciones: objeto opcional { idReceta: n }. Lo que no esté ahí usa las
+// porciones con las que la receta viene escrita.
+function listaDeCompras(ids, incluirAlacena, porciones) {
   const acc = {};
   ids.forEach((rid) => {
     const receta = RECETAS.find((x) => x.id === rid);
     if (!receta) return;
-    receta.ing.forEach(({ i, c, u }) => {
+    ingredientesPara(receta, porciones && porciones[rid]).forEach(({ i, c, u }) => {
       const info = INGREDIENTES[i];
       if (!info) return;
       if (info.alacena && !incluirAlacena) return;

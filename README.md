@@ -109,8 +109,8 @@ ingredientes y del nombre original: escribís "tofu" y aparecen las recetas que 
 
 **Mi selección** — entrás a una receta, la agregás, y queda guardada en el navegador.
 
-**Compras** — junta los ingredientes de todo lo que elegiste, **suma las cantidades** cuando el
-ingrediente y la unidad coinciden, y los agrupa por sector del súper. Cada ítem se puede tachar, y
+**Compras** — junta los ingredientes de todo lo que elegiste **en las porciones que hayas puesto**,
+suma las cantidades cuando el ingrediente y la unidad coinciden, y los agrupa por sector del súper. Cada ítem se puede tachar, y
 hay un botón para copiar la lista entera al portapapeles.
 
 Lo de alacena viene **oculto por defecto**: no tiene sentido comprar salsa de soja cada vez. Un
@@ -248,6 +248,27 @@ assets/banderas/    9 banderas, una por país (<código>.jpg)
 assets/platos/      fotos de los platos (<id receta>.jpg) + LEEME.txt
 ```
 
+## Porciones
+
+En la ficha de cada receta, las porciones son un selector: **de 2 a 10**. Al cambiarlo se
+recalculan los ingredientes ahí mismo y también en la lista de compras, que es donde de verdad
+importa — la idea es saber cuánto comprar cuando vienen visitas.
+
+Tres decisiones que hacen que sirva:
+
+**Las cantidades se redondean a algo medible.** 466 g no es una cantidad, es un resultado de
+multiplicar. Cada unidad tiene su escalón: gramos y mililitros van de a 10 arriba de 100 y de a 5
+entre 20 y 100; los huevos, las cucharadas y los puñados de medio en medio; los dientes de ajo
+enteros. Nada baja de su mínimo cocinable, así que una receta reducida nunca pide 0.
+
+**El rango incluye las porciones propias de la receta si caen fuera.** El kimchi rinde 12 y el
+hotteok 8: forzarlos a 10 haría que abrir la receta cambiara sus cantidades sin que nadie lo
+pida. Esas dos ofrecen 2..10 **más** su propio número, que es el que viene elegido.
+
+**Sólo se guarda lo que se cambió.** `asiansecret.porciones` es un `{ id: n }` con las recetas
+ajustadas; el resto usa las porciones con las que están escritas. La tarjeta muestra el número
+sólo cuando difiere del original.
+
 ## Videos
 
 Cada receta puede tener su video de YouTube. Se agrega en `js/data.js`, en la receta que sea:
@@ -286,5 +307,4 @@ que revienta recién al abrir la app en el navegador.
 
 ## Pendiente
 
-- Ajuste de porciones: recalcular las cantidades según cuántos comen
 - Tailandés como tercer idioma
