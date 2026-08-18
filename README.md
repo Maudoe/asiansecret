@@ -248,6 +248,27 @@ assets/banderas/    9 banderas, una por país (<código>.jpg)
 assets/platos/      fotos de los platos (<id receta>.jpg) + LEEME.txt
 ```
 
+## Videos
+
+Cada receta puede tener su video de YouTube. Se agrega en `js/data.js`, en la receta que sea:
+
+```js
+{ id: "mapo_tofu", video: "https://youtu.be/AbCdEfGhIjK", nat: "麻婆豆腐", ... }
+```
+
+Sirve el link entero pegado del navegador, el corto de `youtu.be`, el de `/embed/`, el de
+`/shorts/` o el id pelado — la app extrae lo que necesita. La receta que no lo tenga
+simplemente no muestra el reproductor.
+
+En el modal aparece un botón de play sobre la foto; al tocarlo el video la reemplaza y la foto
+queda de fondo desenfocada, porque la columna es alta y el video es 16:9: con negro plano
+quedaban dos bandas muertas arriba y abajo.
+
+**El iframe se crea recién al hacer clic.** Cargarlo de entrada le sumaría medio mega y una
+conexión a YouTube a cada receta que abrís, la mires o no. Se usa `youtube-nocookie.com`.
+
+Las tarjetas con video llevan un ▶ chiquito en la esquina, para verlas de un vistazo en la grilla.
+
 ## Tests
 
 ```
@@ -258,8 +279,8 @@ node test-boot.js    arranca la app contra un DOM de juguete
 `test-asian.js` revisa que cada receta esté completa en los dos idiomas, que no haya
 ingredientes inventados, que las cantidades sumen y que todo `data-t` del HTML tenga su clave.
 
-`test-boot.js` va más allá: ejecuta `app.js` de verdad, hace clic en una bandera y comprueba que
-aparezcan las 20 recetas coreanas. Existe porque el test estático miraba que los `id` estuvieran
+`test-boot.js` va más allá: ejecuta `app.js` de verdad, hace clic en una bandera, abre un modal,
+reproduce un video y comprueba que todo aparezca donde tiene que aparecer. Existe porque el test estático miraba que los `id` estuvieran
 en el HTML, pero no detectaba un selector roto — `$(".nav-btn")` en lugar de `$(".nav-btn")` —
 que revienta recién al abrir la app en el navegador.
 

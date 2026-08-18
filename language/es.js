@@ -935,4 +935,6 @@ registerLang("es", {
 
   "paises.volver": "Todos los países",
   "paises.titulo": "¿Qué se te antoja hoy?",
+
+  "receta.verVideo": "Ver el video",
 });

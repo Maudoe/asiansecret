@@ -423,6 +423,91 @@ h1, h2, h3, .serif {
 .pais-hero.sin-pais .pais-hero-sub { display: none; }
 .pais-hero.sin-pais .pais-hero-texto { padding: 14px 0 0; }
 
+/* ---------------- video de la receta ---------------- */
+/* El botón vive sobre la foto y al tocarlo el iframe la tapa. Se queda en la
+   misma columna: la foto ya ocupaba el espacio, no hace falta mover nada. */
+.modal-play {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 24px 13px 20px;
+  border-radius: 40px;
+  border: 1px solid rgba(var(--oro-rgb), 0.55);
+  background: rgba(8, 7, 6, 0.62);
+  backdrop-filter: blur(10px);
+  color: var(--blanco);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: all var(--transicion);
+}
+.modal-play:hover {
+  border-color: var(--oro-claro);
+  background: rgba(var(--rojo-rgb), 0.42);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+.modal-play-icono { font-size: 0.95rem; color: var(--oro-claro); }
+.modal-lado-foto.con-video .modal-play,
+.modal-lado-foto.con-video .modal-foto-velo,
+.modal-lado-foto.con-video .modal-rotulo { display: none; }
+/* La foto se queda de fondo, desenfocada y apagada: la columna es alta y el
+   video es 16:9, así que sobra mucho espacio arriba y abajo. Con negro plano
+   quedaban dos bandas muertas; así el video flota sobre el propio plato. */
+.modal-lado-foto.con-video img {
+  filter: blur(22px) brightness(0.34) saturate(0.9);
+  transform: scale(1.15);
+}
+
+/* El video va centrado en la columna y en 16:9: la foto es vertical, así que
+   arriba y abajo queda negro. Estirarlo para llenar deformaría la imagen. */
+.modal-video {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  padding: 0 10px;
+}
+.modal-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(var(--oro-rgb), 0.28);
+}
+
+/* Sello en la tarjeta, del lado opuesto al tiempo. */
+.tarjeta-video {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  z-index: 2;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 0.62rem;
+  color: var(--oro-claro);
+  background: rgba(8, 7, 6, 0.66);
+  border: 1px solid rgba(var(--oro-rgb), 0.4);
+  backdrop-filter: blur(6px);
+}
+/* Si además está elegida, el tilde manda y el sello se corre. */
+.tarjeta.elegida .tarjeta-video { right: 44px; }
+
+@media (max-width: 880px) {
+  .modal-play { top: 50%; }
+}
+
 /* ---------------- volver ---------------- */
 .volver {
   align-self: flex-start;

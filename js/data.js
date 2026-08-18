@@ -1,6 +1,11 @@
 // ============ ASIANSECRET — datos ============
 // Acá NO hay texto visible: sólo identificadores y números. Todo lo que se
 // lee en pantalla vive en language/*.js, para poder traducir sin tocar esto.
+// video: enlace de YouTube de la receta, opcional. Acepta el link entero
+// pegado del navegador o solo el id — la app extrae lo que necesita. La
+// receta que no lo tenga simplemente no muestra el reproductor.
+//   { id: "mapo_tofu", video: "https://youtu.be/AbCdEfGhIjK", ... }
+//
 // nat / fon: nombre en escritura original y pronunciación. Van acá y no en
 // language/ porque 김치 es 김치 en todos los idiomas; duplicarlo por idioma
 // sería mantener 83 cadenas idénticas cada vez que se suma una traducción.

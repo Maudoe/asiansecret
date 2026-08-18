@@ -935,4 +935,6 @@ registerLang("en", {
 
   "paises.volver": "All countries",
   "paises.titulo": "What are you in the mood for?",
+
+  "receta.verVideo": "Watch the video",
 });

@@ -90,6 +90,16 @@ function conNegritas(texto, tag, clase) {
   return el;
 }
 
+// Saca el id de YouTube de lo que haya en data.js: sirve el link completo
+// pegado del navegador, el corto de youtu.be, el de /embed/ o el id pelado.
+// Devuelve null si no reconoce nada, y ahí la receta va sin reproductor.
+function idDeYouTube(valor) {
+  if (!valor) return null;
+  const v = String(valor).trim();
+  if (/^[\w-]{11}$/.test(v)) return v;
+  const m = v.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/)([\w-]{11})/);
+  return m ? m[1] : null;
+}
 // 김치 (gimchi) — el nombre en su escritura y cómo se pronuncia.
 // Devuelve null si la receta todavía no lo tiene cargado.
 function nombreNativo(rec, clase) {
@@ -225,6 +235,13 @@ function tarjeta(rec) {
   meta.append(dif);
   cuerpo.append(meta);
 
+  // Distintivo para ver de un vistazo cuáles tienen video.
+  if (idDeYouTube(rec.video)) {
+    const sello = crear("span", "tarjeta-video", "▶");
+    sello.title = t("receta.verVideo");
+    el.append(sello);
+  }
+
   el.append(foto, velo, minuto, marca, cuerpo);
   return el;
 }
@@ -268,6 +285,30 @@ function abrirModal(id) {
   const natModal = nombreNativo(rec, "modal-nativo");
   if (natModal) rotulo.append(natModal);
   ladoFoto.append(rotulo);
+
+  // Si la receta tiene video, un botón de play sobre la foto. El iframe se
+  // crea recién al tocarlo: cargarlo de entrada le suma medio mega y una
+  // conexión a YouTube a cada receta que abrís, la mires o no.
+  const idVideo = idDeYouTube(rec.video);
+  if (idVideo) {
+    const play = crear("button", "modal-play");
+    play.setAttribute("aria-label", t("receta.verVideo"));
+    play.append(crear("span", "modal-play-icono", "▶"), crear("span", "modal-play-texto", t("receta.verVideo")));
+    play.addEventListener("click", () => {
+      const marco = crear("div", "modal-video");
+      const ifr = document.createElement("iframe");
+      ifr.src = "https://www.youtube-nocookie.com/embed/" + idVideo + "?autoplay=1&rel=0&modestbranding=1";
+      ifr.title = t("r." + rec.id + ".n");
+      ifr.setAttribute("allow", "accelerometer; autoplay; encrypted-media; picture-in-picture");
+      ifr.setAttribute("allowfullscreen", "");
+      ifr.setAttribute("frameborder", "0");
+      marco.append(ifr);
+      ladoFoto.classList.add("con-video");
+      ladoFoto.append(marco);
+    });
+    ladoFoto.append(play);
+  }
+
   doble.append(ladoFoto);
 
   // ---------------- lado de la receta ----------------

@@ -269,7 +269,48 @@ if (conEnfasis) {
   }
 }
 
-// 9) cambiar de idioma no rompe nada
+// 9) el video: el extractor acepta las formas en que se pega un link
+const yt = ctx.idDeYouTube;
+chk(typeof yt === "function", "falta idDeYouTube");
+if (typeof yt === "function") {
+  [
+    ["dQw4w9WgXcQ", "dQw4w9WgXcQ"],
+    ["https://www.youtube.com/watch?v=dQw4w9WgXcQ", "dQw4w9WgXcQ"],
+    ["https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=42s", "dQw4w9WgXcQ"],
+    ["https://youtu.be/dQw4w9WgXcQ?si=xyz", "dQw4w9WgXcQ"],
+    ["https://www.youtube.com/embed/dQw4w9WgXcQ", "dQw4w9WgXcQ"],
+    ["https://www.youtube.com/shorts/dQw4w9WgXcQ", "dQw4w9WgXcQ"],
+    ["", null], [undefined, null], ["cualquier cosa", null],
+  ].forEach(([entra, sale]) => {
+    chk(yt(entra) === sale, `idDeYouTube(${JSON.stringify(entra)}) dio ${JSON.stringify(yt(entra))}`);
+  });
+}
+
+// y la interfaz aparece sólo cuando la receta tiene video cargado
+chk(!q(".modal-play"), "sin video cargado no debería haber botón de play");
+chk(!q(".tarjeta-video"), "sin video cargado no debería haber sello en las tarjetas");
+
+RECETAS[0].video = "https://youtu.be/dQw4w9WgXcQ";
+q("#modal-cerrar").click();
+ctx.render();
+chk(!!q(".tarjeta-video"), "con video cargado falta el sello en la tarjeta");
+qa("#grilla .tarjeta").find((t) => t.dataset.receta === RECETAS[0].id).click();
+const play = q(".modal-play");
+chk(!!play, "con video cargado falta el botón de play en el modal");
+if (play) {
+  // El iframe se crea recién al tocar: cargarlo de entrada sumaría una
+  // conexión a YouTube en cada receta que abrís, la mires o no.
+  chk(!q(".modal-video"), "el iframe no debería existir antes del clic");
+  play.click();
+  const ifr = q(".modal-video IFRAME");
+  chk(!!ifr, "el clic en play no creó el reproductor");
+  chk(ifr && ifr.src.includes("youtube-nocookie.com/embed/dQw4w9WgXcQ"),
+    `el iframe apunta a ${ifr && ifr.src}`);
+}
+delete RECETAS[0].video;
+q("#modal-cerrar").click();
+
+// 10) cambiar de idioma no rompe nada
 const btnEn = qa(".idioma-btn").find((b) => b.dataset.idioma === "en");
 btnEn.click();
 chk(qa(".pais-carta").length === 9 || qa("#grilla .tarjeta").length > 0, "el cambio de idioma vació la vista");
