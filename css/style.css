@@ -107,6 +107,10 @@ h1, h2, h3, .serif {
   text-align: center;
   position: relative;
   isolation: isolate;
+  /* Por encima del velo global (z-index 50). El velo tiñe toda la página a
+     propósito, pero sobre el logo apagaba el dorado y lo dejaba opaco. El
+     fondo detrás del logo sí sigue teñido: lo que se levanta es el PNG. */
+  z-index: 55;
 }
 
 /* El resplandor detrás del logo lo pone ahora la propia imagen de fondo: el
