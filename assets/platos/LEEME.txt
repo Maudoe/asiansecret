@@ -1,6 +1,6 @@
 FOTOS DE LOS PLATOS
 
-31 de 83 listas.
+34 de 83 listas.
 
 Pone aca una imagen por receta, con el nombre de archivo exacto de la lista.
 Las marcadas con [x] ya estan.
@@ -55,11 +55,11 @@ pueden ir agregando de a poco sin romper nada.
   [x] kongguksu.jpg             Kongguksu  ·  콩국수
   [x] hotteok.jpg               Hotteok  ·  호떡
 
---- JAPÓN  (0/21) ---
+--- JAPÓN  (3/21) ---
 
-  [ ] yakisoba.jpg              Yakisoba  ·  焼きそば
-  [ ] pollo_teriyaki.jpg        Pollo Teriyaki  ·  鶏の照り焼き
-  [ ] karaage.jpg               Karaage  ·  唐揚げ
+  [x] yakisoba.jpg              Yakisoba  ·  焼きそば
+  [x] pollo_teriyaki.jpg        Pollo Teriyaki  ·  鶏の照り焼き
+  [x] karaage.jpg               Karaage  ·  唐揚げ
   [ ] gyudon.jpg                Gyudon  ·  牛丼
   [ ] tonkatsu.jpg              Tonkatsu  ·  とんかつ
   [ ] salmon_teriyaki.jpg       Salmón Teriyaki  ·  鮭の照り焼き
@@ -130,4 +130,4 @@ pueden ir agregando de a poco sin romper nada.
 
 ================================================================
 
-Faltan 52.
+Faltan 49.

@@ -72,7 +72,7 @@ Para agregar un idioma: copiar `es.js`, traducir los valores, cambiar el código
 > Son `.js` que envuelven un JSON en vez de `.json` puros porque el navegador bloquea leer `.json`
 > locales al abrir con doble clic (CORS en `file://`). El contenido interno es JSON — se edita igual.
 
-Hoy están **español e inglés**, con 829 claves cada uno y paridad verificada.
+Hoy están **español e inglés**, con 962 claves cada uno y paridad verificada.
 
 **La excepción:** el nombre en escritura original y su pronunciación viven en `js/data.js`,
 como `nat` y `fon`, no en `language/`. 김치 es 김치 en todos los idiomas — meterlo en los
@@ -97,8 +97,19 @@ coreano, Hepburn para el japonés, RTGS para el tailandés.
 | 🍡 Repostería | 7 |
 
 Cada una con origen, tiempo, porciones, dificultad, ingredientes con cantidades y pasos numerados
-— **439 pasos** en total, escritos con la técnica adentro (por qué se seca la proteína, por qué no
+— **570 pasos** en total, escritos con la técnica adentro (por qué se seca la proteína, por qué no
 hay que hervir el miso, por qué el arroz frito se hace con arroz del día anterior).
+
+### Los pasos
+
+China y Corea están escritas **a nivel libro de cocina**: cada paso trae la técnica, la señal que
+te dice que está listo (el olor, el sonido, cómo cambian las burbujas), el tiempo concreto, el
+porqué, y el error que arruina el plato. Están pensadas para alguien que nunca cocinó.
+
+Casi todas arrancan con mise en place, porque en un salteado de tres minutos no hay tiempo de
+picar nada en el medio. Lo que no se puede pasar por alto va **en negrita**.
+
+Van 31 recetas de 83. El resto conserva sus pasos originales, más cortos.
 
 ## Cómo funciona
 

@@ -259,6 +259,15 @@ if (conEnfasis) {
     chk(pasosLi.length === conEnfasis.pasos,
       `el modal listó ${pasosLi.length} pasos y la receta tiene ${conEnfasis.pasos}`);
 
+    // La lista de ingredientes se dibuja aparte para poder repintarla al
+    // cambiar las porciones, y se quedó vacía una vez porque se buscaba
+    // #ing-lista antes de que el modal estuviera en el documento.
+    const ingLi = qa(".ing-lista li");
+    chk(ingLi.length === conEnfasis.ing.length,
+      `el modal listó ${ingLi.length} ingredientes y la receta tiene ${conEnfasis.ing.length}`);
+    chk(ingLi.every((li) => li.querySelector(".c").textContent.trim().length > 0),
+      "hay ingredientes sin cantidad");
+
     // Los ** de énfasis tienen que llegar como <strong>, nunca como texto.
     // split(/**/) es un comentario de bloque y se vuelve split() a secas: pasa
     // el chequeo de sintaxis y deja los asteriscos a la vista del usuario.

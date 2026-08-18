@@ -258,8 +258,10 @@ function tarjeta(rec) {
 // ---------- modal ----------
 // Se redibuja sola cada vez que cambian las porciones, así que vive aparte
 // del armado del modal.
-function pintarIngredientes(rec) {
-  const ul = $("#ing-lista");
+// Recibe el <ul> porque al armar el modal todavía no está en el documento y
+// $("#ing-lista") devolvería null. Al cambiar las porciones sí se puede buscar.
+function pintarIngredientes(rec, ul) {
+  ul = ul || $("#ing-lista");
   if (!ul) return;
   ul.textContent = "";
   ingredientesPara(rec, porcionesDe(rec)).forEach(({ i, c, u }) => {
@@ -397,7 +399,7 @@ function abrirModal(id) {
   secIng.append(ul);
   secIng.append(crear("p", "sub", t("receta.alacenaNota")));
   ladoTexto.append(secIng);
-  pintarIngredientes(rec);
+  pintarIngredientes(rec, ul);
 
   // --- pasos ---
   const secPasos = crear("div", "modal-seccion anim");
