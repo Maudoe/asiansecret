@@ -1,8 +1,10 @@
 # AsianSecret 🥢
 
+**En línea:** https://maudoe.github.io/asiansecret/
+
 App de recetas asiáticas. Elegís lo que tenés ganas de comer y te arma la lista de compras.
 
-Abrir `index.html` con doble clic. No necesita servidor ni instalación.
+También abre local: doble clic en `index.html`. No necesita servidor ni instalación.
 
 ## Paleta
 
