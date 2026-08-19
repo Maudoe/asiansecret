@@ -160,7 +160,16 @@ def main():
         if not archivo.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
             continue
         nombre = normalizar(archivo)
+        # Primero por prefijo, que es lo mas seguro. Si no hay, se busca el
+        # prefijo en cualquier parte del nombre: archivos como
+        # "Fresh_tantanmen_..." o "Galletas_de_Matcha_..." llevan la palabra
+        # adentro y no al principio. Se prueba de mas largo a mas corto para
+        # que "miso_ramen" gane sobre "miso_shiru".
         receta = next((r for p, r in ORDEN if nombre.startswith(p)), None)
+        como = "prefijo"
+        if not receta:
+            receta = next((r for p, r in ORDEN if p in nombre), None)
+            como = "contenido"
         if not receta:
             sin_mapear.append(archivo)
             continue
@@ -171,7 +180,7 @@ def main():
         kb = round(os.path.getsize(salida) / 1024)
         total += kb
         hechas.append(receta)
-        print(f'  {receta + ".jpg":26} {kb} KB')
+        print(f'  {receta + ".jpg":26} {kb} KB{"" if como == "prefijo" else "   (por contenido)"}')
 
     if sin_mapear:
         print('\n  sin asociar — agregar su prefijo a PREFIJOS:')

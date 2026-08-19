@@ -1,6 +1,6 @@
 FOTOS DE LOS PLATOS
 
-34 de 83 listas.
+51 de 83 listas.
 
 Pone aca una imagen por receta, con el nombre de archivo exacto de la lista.
 Las marcadas con [x] ya estan.
@@ -55,29 +55,29 @@ pueden ir agregando de a poco sin romper nada.
   [x] kongguksu.jpg             Kongguksu  ·  콩국수
   [x] hotteok.jpg               Hotteok  ·  호떡
 
---- JAPÓN  (3/21) ---
+--- JAPÓN  (20/21) ---
 
   [x] yakisoba.jpg              Yakisoba  ·  焼きそば
   [x] pollo_teriyaki.jpg        Pollo Teriyaki  ·  鶏の照り焼き
   [x] karaage.jpg               Karaage  ·  唐揚げ
-  [ ] gyudon.jpg                Gyudon  ·  牛丼
-  [ ] tonkatsu.jpg              Tonkatsu  ·  とんかつ
-  [ ] salmon_teriyaki.jpg       Salmón Teriyaki  ·  鮭の照り焼き
-  [ ] katsudon.jpg              Katsudon  ·  カツ丼
-  [ ] miso_shiru.jpg            Sopa de Miso  ·  味噌汁
-  [ ] mochi.jpg                 Mochi  ·  餅
-  [ ] dorayaki.jpg              Dorayaki  ·  どら焼き
-  [ ] matcha_cookies.jpg        Galletas de Matcha  ·  抹茶クッキー
-  [ ] tonkotsu_ramen.jpg        Tonkotsu Ramen  ·  豚骨ラーメン
+  [x] gyudon.jpg                Gyudon  ·  牛丼
+  [x] tonkatsu.jpg              Tonkatsu  ·  とんかつ
+  [x] salmon_teriyaki.jpg       Salmón Teriyaki  ·  鮭の照り焼き
+  [x] katsudon.jpg              Katsudon  ·  カツ丼
+  [x] miso_shiru.jpg            Sopa de Miso  ·  味噌汁
+  [x] mochi.jpg                 Mochi  ·  餅
+  [x] dorayaki.jpg              Dorayaki  ·  どら焼き
+  [x] matcha_cookies.jpg        Galletas de Matcha  ·  抹茶クッキー
+  [x] tonkotsu_ramen.jpg        Tonkotsu Ramen  ·  豚骨ラーメン
   [ ] shoyu_ramen.jpg           Shoyu Ramen  ·  醤油ラーメン
-  [ ] miso_ramen.jpg            Miso Ramen  ·  味噌ラーメン
-  [ ] shio_ramen.jpg            Shio Ramen  ·  塩ラーメン
-  [ ] tantanmen.jpg             Tantanmen  ·  担々麺
-  [ ] tsukemen.jpg              Tsukemen  ·  つけ麺
-  [ ] hiyashi_chuka.jpg         Hiyashi Chuka  ·  冷やし中華
-  [ ] katsu_curry.jpg           Katsu Curry  ·  カツカレー
-  [ ] okonomiyaki.jpg           Okonomiyaki  ·  お好み焼き
-  [ ] takoyaki.jpg              Takoyaki  ·  たこ焼き
+  [x] miso_ramen.jpg            Miso Ramen  ·  味噌ラーメン
+  [x] shio_ramen.jpg            Shio Ramen  ·  塩ラーメン
+  [x] tantanmen.jpg             Tantanmen  ·  担々麺
+  [x] tsukemen.jpg              Tsukemen  ·  つけ麺
+  [x] hiyashi_chuka.jpg         Hiyashi Chuka  ·  冷やし中華
+  [x] katsu_curry.jpg           Katsu Curry  ·  カツカレー
+  [x] okonomiyaki.jpg           Okonomiyaki  ·  お好み焼き
+  [x] takoyaki.jpg              Takoyaki  ·  たこ焼き
 
 --- TAILANDIA  (0/24) ---
 
@@ -130,4 +130,4 @@ pueden ir agregando de a poco sin romper nada.
 
 ================================================================
 
-Faltan 49.
+Faltan 32.
