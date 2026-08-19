@@ -1,6 +1,6 @@
 FOTOS DE LOS PLATOS
 
-51 de 83 listas.
+52 de 83 listas.
 
 Pone aca una imagen por receta, con el nombre de archivo exacto de la lista.
 Las marcadas con [x] ya estan.
@@ -55,7 +55,7 @@ pueden ir agregando de a poco sin romper nada.
   [x] kongguksu.jpg             Kongguksu  ·  콩국수
   [x] hotteok.jpg               Hotteok  ·  호떡
 
---- JAPÓN  (20/21) ---
+--- JAPÓN  (21/21) ---
 
   [x] yakisoba.jpg              Yakisoba  ·  焼きそば
   [x] pollo_teriyaki.jpg        Pollo Teriyaki  ·  鶏の照り焼き
@@ -69,7 +69,7 @@ pueden ir agregando de a poco sin romper nada.
   [x] dorayaki.jpg              Dorayaki  ·  どら焼き
   [x] matcha_cookies.jpg        Galletas de Matcha  ·  抹茶クッキー
   [x] tonkotsu_ramen.jpg        Tonkotsu Ramen  ·  豚骨ラーメン
-  [ ] shoyu_ramen.jpg           Shoyu Ramen  ·  醤油ラーメン
+  [x] shoyu_ramen.jpg           Shoyu Ramen  ·  醤油ラーメン
   [x] miso_ramen.jpg            Miso Ramen  ·  味噌ラーメン
   [x] shio_ramen.jpg            Shio Ramen  ·  塩ラーメン
   [x] tantanmen.jpg             Tantanmen  ·  担々麺
@@ -130,4 +130,4 @@ pueden ir agregando de a poco sin romper nada.
 
 ================================================================
 
-Faltan 32.
+Faltan 31.
