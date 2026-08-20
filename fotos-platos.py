@@ -98,6 +98,7 @@ PREFIJOS = {
     'gai_yang': 'gai_yang',
     'khao_man_gai': 'khao_man_gai',
     'khao_niao': 'khao_niao',
+    'khao niao': 'khao_niao',
     'sticky_rice_plain': 'khao_niao',
     'khao_pad': 'khao_pad',
     'khao_soi': 'khao_soi',

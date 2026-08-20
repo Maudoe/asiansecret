@@ -1,6 +1,6 @@
 FOTOS DE LOS PLATOS
 
-72 de 83 listas.
+76 de 83 listas.
 
 Pone aca una imagen por receta, con el nombre de archivo exacto de la lista.
 Las marcadas con [x] ya estan.
@@ -79,7 +79,7 @@ pueden ir agregando de a poco sin romper nada.
   [x] okonomiyaki.jpg           Okonomiyaki  ·  お好み焼き
   [x] takoyaki.jpg              Takoyaki  ·  たこ焼き
 
---- TAILANDIA  (20/24) ---
+--- TAILANDIA  (24/24) ---
 
   [x] khao_soi.jpg              Khao Soi  ·  ข้าวซอย
   [x] pad_thai.jpg              Pad Thai  ·  ผัดไทย
@@ -101,10 +101,10 @@ pueden ir agregando de a poco sin romper nada.
   [x] pad_see_ew.jpg            Pad See Ew  ·  ผัดซีอิ๊ว
   [x] pad_kee_mao.jpg           Pad Kee Mao  ·  ผัดขี้เมา
   [x] boat_noodles.jpg          Boat Noodles  ·  ก๋วยเตี๋ยวเรือ
-  [ ] khao_pad.jpg              Khao Pad  ·  ข้าวผัด
-  [ ] khao_niao.jpg             Khao Niao  ·  ข้าวเหนียว
-  [ ] som_tam.jpg               Som Tam  ·  ส้มตำ
-  [ ] tom_saap.jpg              Tom Saap  ·  ต้มแซ่บ
+  [x] khao_pad.jpg              Khao Pad  ·  ข้าวผัด
+  [x] khao_niao.jpg             Khao Niao  ·  ข้าวเหนียว
+  [x] som_tam.jpg               Som Tam  ·  ส้มตำ
+  [x] tom_saap.jpg              Tom Saap  ·  ต้มแซ่บ
 
 --- VIETNAM  (0/1) ---
 
@@ -130,4 +130,4 @@ pueden ir agregando de a poco sin romper nada.
 
 ================================================================
 
-Faltan 11.
+Faltan 7.
