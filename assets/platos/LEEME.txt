@@ -1,6 +1,6 @@
 FOTOS DE LOS PLATOS
 
-52 de 83 listas.
+72 de 83 listas.
 
 Pone aca una imagen por receta, con el nombre de archivo exacto de la lista.
 Las marcadas con [x] ya estan.
@@ -79,28 +79,28 @@ pueden ir agregando de a poco sin romper nada.
   [x] okonomiyaki.jpg           Okonomiyaki  ·  お好み焼き
   [x] takoyaki.jpg              Takoyaki  ·  たこ焼き
 
---- TAILANDIA  (0/24) ---
+--- TAILANDIA  (20/24) ---
 
-  [ ] khao_soi.jpg              Khao Soi  ·  ข้าวซอย
-  [ ] pad_thai.jpg              Pad Thai  ·  ผัดไทย
-  [ ] gai_pad_krapow.jpg        Gai Pad Krapow  ·  ไก่ผัดกะเพรา
-  [ ] tom_yum_goong.jpg         Tom Yum Goong  ·  ต้มยำกุ้ง
-  [ ] curry_verde_verduras.jpg  Curry Verde de Verduras  ·  แกงเขียวหวานผัก
-  [ ] pad_pak_boong.jpg         Pad Pak Boong  ·  ผัดผักบุ้ง
-  [ ] tom_kha_gai.jpg           Tom Kha Gai  ·  ต้มข่าไก่
-  [ ] mango_sticky_rice.jpg     Mango con Arroz Glutinoso  ·  ข้าวเหนียวมะม่วง
-  [ ] banana_roti.jpg           Roti de Banana  ·  โรตีกล้วย
-  [ ] gaeng_keow_wan.jpg        Gaeng Keow Wan  ·  แกงเขียวหวาน
-  [ ] gai_yang.jpg              Gai Yang  ·  ไก่ย่าง
-  [ ] gai_tod.jpg               Gai Tod  ·  ไก่ทอด
-  [ ] khao_man_gai.jpg          Khao Man Gai  ·  ข้าวมันไก่
-  [ ] massaman.jpg              Curry Massaman  ·  แกงมัสมั่น
-  [ ] panang.jpg                Curry Panang  ·  พะแนง
-  [ ] nam_tok.jpg               Nam Tok  ·  น้ำตกหมู
-  [ ] larb_moo.jpg              Larb Moo  ·  ลาบหมู
-  [ ] pad_see_ew.jpg            Pad See Ew  ·  ผัดซีอิ๊ว
-  [ ] pad_kee_mao.jpg           Pad Kee Mao  ·  ผัดขี้เมา
-  [ ] boat_noodles.jpg          Boat Noodles  ·  ก๋วยเตี๋ยวเรือ
+  [x] khao_soi.jpg              Khao Soi  ·  ข้าวซอย
+  [x] pad_thai.jpg              Pad Thai  ·  ผัดไทย
+  [x] gai_pad_krapow.jpg        Gai Pad Krapow  ·  ไก่ผัดกะเพรา
+  [x] tom_yum_goong.jpg         Tom Yum Goong  ·  ต้มยำกุ้ง
+  [x] curry_verde_verduras.jpg  Curry Verde de Verduras  ·  แกงเขียวหวานผัก
+  [x] pad_pak_boong.jpg         Pad Pak Boong  ·  ผัดผักบุ้ง
+  [x] tom_kha_gai.jpg           Tom Kha Gai  ·  ต้มข่าไก่
+  [x] mango_sticky_rice.jpg     Mango con Arroz Glutinoso  ·  ข้าวเหนียวมะม่วง
+  [x] banana_roti.jpg           Roti de Banana  ·  โรตีกล้วย
+  [x] gaeng_keow_wan.jpg        Gaeng Keow Wan  ·  แกงเขียวหวาน
+  [x] gai_yang.jpg              Gai Yang  ·  ไก่ย่าง
+  [x] gai_tod.jpg               Gai Tod  ·  ไก่ทอด
+  [x] khao_man_gai.jpg          Khao Man Gai  ·  ข้าวมันไก่
+  [x] massaman.jpg              Curry Massaman  ·  แกงมัสมั่น
+  [x] panang.jpg                Curry Panang  ·  พะแนง
+  [x] nam_tok.jpg               Nam Tok  ·  น้ำตกหมู
+  [x] larb_moo.jpg              Larb Moo  ·  ลาบหมู
+  [x] pad_see_ew.jpg            Pad See Ew  ·  ผัดซีอิ๊ว
+  [x] pad_kee_mao.jpg           Pad Kee Mao  ·  ผัดขี้เมา
+  [x] boat_noodles.jpg          Boat Noodles  ·  ก๋วยเตี๋ยวเรือ
   [ ] khao_pad.jpg              Khao Pad  ·  ข้าวผัด
   [ ] khao_niao.jpg             Khao Niao  ·  ข้าวเหนียว
   [ ] som_tam.jpg               Som Tam  ·  ส้มตำ
@@ -130,4 +130,4 @@ pueden ir agregando de a poco sin romper nada.
 
 ================================================================
 
-Faltan 31.
+Faltan 11.
