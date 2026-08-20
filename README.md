@@ -194,14 +194,13 @@ con el nombre del id de la receta — `bibimbap.jpg`, `khao_soi.jpg`. Están tod
 Si vienen horizontales no importa: se recortan a lo alto completo y se centran. Lo que sí importa
 es que el plato no quede pegado al borde de abajo, porque ahí va el nombre sobre el degradado.
 
-Sobre la foto van tres capas de degradado, y las tres hacen falta:
-
-1. Negro de abajo hacia arriba, para que el nombre se lea sobre cualquier foto
-2. Rojo tenue en el pie, que ata la tarjeta a la paleta
-3. Un toque de dorado arriba, donde va la etiqueta del tiempo
-
-La segunda y la tercera son las que hacen que ochenta fotos sacadas por gente distinta, con
-luces distintas, se vean de la misma app. Sin ellas la grilla es un collage.
+Sobre la foto va un solo degradado negro, de abajo hacia arriba, para que el nombre se lea sobre
+el pie de la tarjeta — se apaga del todo a mitad de la foto, así que el plato se ve a color real
+en la mitad de arriba. Antes tenía además una capa roja y otra dorada tapando la imagen entera
+para unificar el tono entre ochenta fotos de fotógrafos distintos, pero eso dejaba la comida
+opaca y sin vida, que es justo lo contrario de lo que tiene que transmitir un plato. La foto
+también lleva `filter: saturate() contrast() brightness()` para que el color salga más vivo que
+el original — se intensifica un poco más todavía al pasar el mouse.
 
 El nombre del plato va en su escritura original con la pronunciación entre paréntesis:
 **Bibimbap** · 비빔밥 (bibimbap) · **Khao Soi** · ข้าวซอย (khâo soi). Así se pide sin depender de

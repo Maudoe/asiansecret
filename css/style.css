@@ -712,9 +712,15 @@ h1, h2, h3, .serif {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 720ms cubic-bezier(0.16, 1, 0.3, 1);
+  /* Realza el color real del plato: sin esto, el velo de abajo hacía todo
+     el trabajo de "atmósfera" y la comida quedaba sin vida. */
+  filter: saturate(1.2) contrast(1.06) brightness(1.03);
+  transition: transform 720ms cubic-bezier(0.16, 1, 0.3, 1), filter 420ms ease;
 }
-.tarjeta:hover .tarjeta-foto img { transform: scale(1.07); }
+.tarjeta:hover .tarjeta-foto img {
+  transform: scale(1.07);
+  filter: saturate(1.3) contrast(1.08) brightness(1.05);
+}
 
 /* Mientras no hay foto: mosaico teñido según la categoría, con su ícono.
    Cada categoría tiene su tono para que la grilla no sea un bloque plano. */
@@ -746,25 +752,26 @@ h1, h2, h3, .serif {
 .tarjeta[data-cat="sopas"]       { --tinte: #3a4a52; }
 .tarjeta[data-cat="reposteria"]  { --tinte: #5d3450; }
 
-/* --- el overlay: oscurece de abajo hacia arriba para que se lea el texto,
-       y tiñe la foto de rojo y oro para unificar fotos de temperaturas
-       distintas. Sin esto, cada plato tira para un lado. --- */
+/* --- el overlay: solo lo justo para que el nombre se lea sobre el pie de
+       la tarjeta. Antes volvía a oscurecer cerca del borde superior y sumaba
+       una capa roja y otra dorada sobre TODA la foto — el plato quedaba
+       apagado incluso lejos del texto. Ahora es una sola rampa que se apaga
+       bien arriba y deja el resto de la foto a color real. --- */
 .tarjeta-velo {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    linear-gradient(to top,
-      rgba(8, 7, 6, 0.97) 0%,
-      rgba(8, 7, 6, 0.9) 24%,
-      rgba(8, 7, 6, 0.52) 48%,
-      rgba(8, 7, 6, 0.12) 72%,
-      rgba(8, 7, 6, 0.3) 100%),
-    linear-gradient(to top, rgba(110, 31, 23, 0.34) 0%, transparent 58%),
-    linear-gradient(to bottom, rgba(var(--oro-rgb), 0.14) 0%, transparent 34%);
+  background: linear-gradient(to top,
+    rgba(6, 5, 4, 0.95) 0%,
+    rgba(6, 5, 4, 0.74) 15%,
+    rgba(6, 5, 4, 0.34) 32%,
+    rgba(6, 5, 4, 0.08) 48%,
+    transparent 60%);
   transition: opacity var(--transicion);
 }
-.tarjeta:hover .tarjeta-velo { opacity: 0.88; }
+/* Al pasar el mouse la foto hace zoom: se afloja el velo para que se note
+   más plato y menos sombra, y el pie sigue leyéndose por el zoom mismo. */
+.tarjeta:hover .tarjeta-velo { opacity: 0.8; }
 
 /* Barrido dorado, encima de todo menos del texto. */
 .tarjeta::after {
@@ -1114,6 +1121,7 @@ li.hecha .nombre, li.hecha .cant { opacity: 0.4; text-decoration: line-through; 
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: saturate(1.18) contrast(1.05) brightness(1.03);
 }
 .modal-doble[data-cat="fideos"]      { --tinte: #6d2d1c; }
 .modal-doble[data-cat="pollo"]       { --tinte: #6b4f1a; }
