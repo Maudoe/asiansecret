@@ -1128,24 +1128,33 @@ li.hecha .nombre, li.hecha .cant { opacity: 0.4; text-decoration: line-through; 
   min-height: 380px;
   background: linear-gradient(160deg, var(--tinte, #241d16), #0c0a08);
 }
+/* La columna de la foto suele ser más angosta y alta que la foto en sí
+   (900x1125), así que si la imagen llena el 100% del recuadro, object-fit
+   cover recorta TODAVÍA más allá del recorte que ya trae el archivo. Con el
+   mismo margen que las tarjetas, el plato se ve completo y no pegado a los
+   bordes. */
 .modal-lado-foto img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 4%;
+  width: 92%;
+  height: 92%;
   object-fit: cover;
   display: block;
+  border-radius: 10px;
   filter: saturate(1.18) contrast(1.05) brightness(1.03);
 }
-/* Parallax sutil: la foto arranca acercada y corrida a la izquierda, y en
-   20 segundos se desliza hacia la derecha mientras se aleja (zoom out). Se
-   reinicia solo porque el <img> se crea de nuevo cada vez que se abre un
-   modal. "both" deja la imagen en el estado final en vez de saltar de
-   vuelta al arranque cuando termina. */
+/* Parallax sutil: la foto arranca apenas acercada y corrida a la izquierda,
+   y en 20 segundos se desliza hacia la derecha mientras se aleja (zoom
+   out). Se reinicia solo porque el <img> se crea de nuevo cada vez que se
+   abre un modal. "both" deja la imagen en el estado final en vez de saltar
+   de vuelta al arranque cuando termina. El rango es chico a propósito: iba
+   hasta 1.14 y eso por sí solo ya se sentía como mucho zoom. */
 @media (prefers-reduced-motion: no-preference) {
   .modal-lado-foto img { animation: parallax-foto 20s ease-in-out both; }
 }
 @keyframes parallax-foto {
-  from { transform: scale(1.14) translateX(-2.5%); }
-  to   { transform: scale(1.02) translateX(2.5%); }
+  from { transform: scale(1.04) translateX(-1.5%); }
+  to   { transform: scale(1) translateX(1.5%); }
 }
 .modal-doble[data-cat="fideos"]      { --tinte: #6d2d1c; }
 .modal-doble[data-cat="pollo"]       { --tinte: #6b4f1a; }
