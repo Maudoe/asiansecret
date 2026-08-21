@@ -235,7 +235,7 @@ const RECETAS = [
     r("zanahoria", 1, "unidad"), r("cebolla", 1, "unidad"), r("salsa_ostras", 2, "cda"),
     r("salsa_soja", 2, "cda"), r("salsa_hoisin", 1, "cda"), r("aceite_neutro", 2, "cda"),
   ]},
-  { id: "japchae", nat: "잡채", fon: "japchae", cat: "fideos", pais: "kr", dif: 2, min: 40, por: 4, pasos: 9, ing: [
+  { id: "japchae", nat: "잡채", fon: "japchae", cat: "fideos", pais: "kr", dif: 2, min: 40, por: 4, pasos: 11, ing: [
     r("fideos_vidrio", 250, "g"), r("carne_vacuna", 200, "g"), r("espinaca", 200, "g"),
     r("zanahoria", 1, "unidad"), r("cebolla", 1, "unidad"), r("hongos_shiitake", 100, "g"),
     r("salsa_soja", 4, "cda"), r("aceite_sesamo", 2, "cda"), r("azucar", 2, "cda"),
@@ -277,7 +277,7 @@ const RECETAS = [
     r("salsa_soja", 3, "cda"), r("pepino", 1, "unidad"), r("sriracha", 3, "cda"),
     r("caldo_pollo", 500, "ml"),
   ]},
-  { id: "dakgalbi", nat: "닭갈비", fon: "dakgalbi", cat: "pollo", pais: "kr", dif: 2, min: 35, por: 3, pasos: 9, ing: [
+  { id: "dakgalbi", nat: "닭갈비", fon: "dakgalbi", cat: "pollo", pais: "kr", dif: 2, min: 35, por: 3, pasos: 12, ing: [
     r("pollo_muslo", 600, "g"), r("pasta_gochujang", 3, "cda"), r("salsa_soja", 2, "cda"),
     r("azucar", 1, "cda"), r("ajo", 4, "diente"), r("repollo", 250, "g"),
     r("zanahoria", 1, "unidad"), r("cebolla", 1, "unidad"), r("aceite_sesamo", 1, "cda"),
@@ -285,7 +285,7 @@ const RECETAS = [
   ]},
 
   // ---------------- CARNE ----------------
-  { id: "bulgogi", nat: "불고기", fon: "bulgogi", cat: "carne", pais: "kr", dif: 1, min: 40, por: 4, pasos: 9, ing: [
+  { id: "bulgogi", nat: "불고기", fon: "bulgogi", cat: "carne", pais: "kr", dif: 1, min: 40, por: 4, pasos: 10, ing: [
     r("carne_vacuna", 700, "g"), r("salsa_soja", 5, "cda"), r("azucar", 2, "cda"),
     r("aceite_sesamo", 2, "cda"), r("ajo", 5, "diente"), r("jengibre", 20, "g"),
     r("cebolla", 1, "unidad"), r("cebolla_verde", 3, "unidad"), r("sesamo_semillas", 1, "cda"),
@@ -356,7 +356,7 @@ const RECETAS = [
     r("cerdo_lomo", 150, "g"), r("cebolla_verde", 3, "unidad"), r("salsa_soja", 3, "cda"),
     r("aceite_sesamo", 1, "cdta"), r("aceite_neutro", 3, "cda"), r("sal", 1, "cdta"),
   ]},
-  { id: "bibimbap", nat: "비빔밥", fon: "bibimbap", cat: "arroz", pais: "kr", dif: 2, min: 45, por: 2, pasos: 10, ing: [
+  { id: "bibimbap", nat: "비빔밥", fon: "bibimbap", cat: "arroz", pais: "kr", dif: 2, min: 45, por: 2, pasos: 12, ing: [
     r("arroz_corto", 300, "g"), r("carne_picada", 250, "g"), r("espinaca", 150, "g"),
     r("zanahoria", 1, "unidad"), r("champinones", 150, "g"), r("brotes_soja", 150, "g"),
     r("huevo", 2, "unidad"), r("pasta_gochujang", 3, "cda"), r("aceite_sesamo", 2, "cda"),
@@ -585,35 +585,35 @@ const RECETAS = [
     r("aceite_neutro", 3, "cda"),
   ]},
   // ---------------- COREA ----------------
-  { id: "kimchi", nat: "김치", fon: "gimchi", cat: "vegetariano", pais: "kr", dif: 2, min: 300, por: 12, pasos: 10, ing: [
+  { id: "kimchi", nat: "김치", fon: "gimchi", cat: "vegetariano", pais: "kr", dif: 2, min: 300, por: 12, pasos: 12, ing: [
     r("col_china", 2000, "g"), r("sal", 200, "g"), r("gochugaru", 100, "g"),
     r("ajo", 12, "diente"), r("jengibre", 40, "g"), r("salsa_pescado", 80, "ml"),
     r("rabano_daikon", 300, "g"), r("cebolla_verde", 6, "unidad"), r("azucar", 1, "cda"),
     r("harina_arroz", 2, "cda"),
   ]},
-  { id: "tteokbokki", nat: "떡볶이", fon: "tteokbokki", cat: "vegetariano", pais: "kr", dif: 1, min: 25, por: 3, pasos: 9, ing: [
+  { id: "tteokbokki", nat: "떡볶이", fon: "tteokbokki", cat: "vegetariano", pais: "kr", dif: 1, min: 25, por: 3, pasos: 11, ing: [
     r("tteok", 500, "g"), r("pasta_gochujang", 3, "cda"), r("gochugaru", 1, "cda"),
     r("eomuk", 150, "g"), r("huevo", 3, "unidad"), r("anchoas_secas", 20, "g"),
     r("alga_kombu", 10, "g"), r("azucar", 2, "cda"), r("cebolla_verde", 3, "unidad"),
   ]},
-  { id: "kimbap", nat: "김밥", fon: "gimbap", cat: "arroz", pais: "kr", dif: 2, min: 45, por: 4, pasos: 10, ing: [
+  { id: "kimbap", nat: "김밥", fon: "gimbap", cat: "arroz", pais: "kr", dif: 2, min: 45, por: 4, pasos: 12, ing: [
     r("arroz_corto", 400, "g"), r("alga_nori", 6, "unidad"), r("zanahoria", 2, "unidad"),
     r("espinaca", 200, "g"), r("pepino", 1, "unidad"), r("danmuji", 120, "g"),
     r("huevo", 3, "unidad"), r("carne_vacuna", 200, "g"), r("aceite_sesamo", 3, "cda"),
     r("sesamo_semillas", 2, "cda"),
   ]},
-  { id: "yangnyeom_chicken", nat: "양념치킨", fon: "yangnyeom chikin", cat: "pollo", pais: "kr", dif: 2, min: 50, por: 4, pasos: 10, ing: [
+  { id: "yangnyeom_chicken", nat: "양념치킨", fon: "yangnyeom chikin", cat: "pollo", pais: "kr", dif: 2, min: 50, por: 4, pasos: 11, ing: [
     r("pollo_muslo", 900, "g"), r("maicena", 150, "g"), r("pasta_gochujang", 4, "cda"),
     r("miel", 3, "cda"), r("salsa_soja", 2, "cda"), r("vinagre_arroz", 1, "cda"),
     r("ajo", 6, "diente"), r("sesamo_semillas", 2, "cda"), r("aceite_neutro", 800, "ml"),
     r("jengibre", 20, "g"),
   ]},
-  { id: "samgyeopsal", nat: "삼겹살", fon: "samgyeopsal", cat: "cerdo", pais: "kr", dif: 1, min: 30, por: 4, pasos: 10, ing: [
+  { id: "samgyeopsal", nat: "삼겹살", fon: "samgyeopsal", cat: "cerdo", pais: "kr", dif: 1, min: 30, por: 4, pasos: 12, ing: [
     r("cerdo_panceta", 900, "g"), r("lechuga", 300, "g"), r("hojas_sesamo", 60, "g"),
     r("ssamjang", 6, "cda"), r("ajo", 10, "diente"), r("aceite_sesamo", 2, "cda"),
     r("sal", 1, "cdta"), r("cebolla_verde", 4, "unidad"), r("arroz_corto", 400, "g"),
   ]},
-  { id: "kimchi_jjigae", nat: "김치찌개", fon: "gimchi jjigae", cat: "sopas", pais: "kr", dif: 1, min: 40, por: 4, pasos: 10, ing: [
+  { id: "kimchi_jjigae", nat: "김치찌개", fon: "gimchi jjigae", cat: "sopas", pais: "kr", dif: 1, min: 40, por: 4, pasos: 12, ing: [
     r("kimchi_fermentado", 400, "g"), r("cerdo_panceta", 300, "g"), r("tofu_firme", 300, "g"),
     r("gochugaru", 1, "cda"), r("anchoas_secas", 20, "g"), r("alga_kombu", 10, "g"),
     r("cebolla_verde", 3, "unidad"), r("ajo", 4, "diente"), r("aceite_sesamo", 1, "cda"),
