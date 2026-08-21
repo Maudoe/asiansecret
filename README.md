@@ -97,19 +97,19 @@ coreano, Hepburn para el japonés, RTGS para el tailandés.
 | 🍡 Repostería | 7 |
 
 Cada una con origen, tiempo, porciones, dificultad, ingredientes con cantidades y pasos numerados
-— **666 pasos** en total, escritos con la técnica adentro (por qué se seca la proteína, por qué no
+— **715 pasos** en total, escritos con la técnica adentro (por qué se seca la proteína, por qué no
 hay que hervir el miso, por qué el arroz frito se hace con arroz del día anterior).
 
 ### Los pasos
 
-China, Corea y Japón están escritas **a nivel libro de cocina**: cada paso trae la técnica, la señal que
+China, Corea, Japón y Tailandia están escritas **a nivel libro de cocina**: cada paso trae la técnica, la señal que
 te dice que está listo (el olor, el sonido, cómo cambian las burbujas), el tiempo concreto, el
 porqué, y el error que arruina el plato. Están pensadas para alguien que nunca cocinó.
 
 Casi todas arrancan con mise en place, porque en un salteado de tres minutos no hay tiempo de
 picar nada en el medio. Lo que no se puede pasar por alto va **en negrita**.
 
-Van 52 recetas de 83. El resto conserva sus pasos originales, más cortos.
+Van 76 recetas de 83. El resto conserva sus pasos originales, más cortos.
 
 ## Cómo funciona
 
