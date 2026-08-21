@@ -224,7 +224,7 @@ const RECETAS = [
     r("vino_shaoxing", 1, "cda"), r("ajo", 3, "diente"), r("cebolla_verde", 2, "unidad"),
     r("mani", 30, "g"), r("caldo_pollo", 200, "ml"),
   ]},
-  { id: "pho_bo", nat: "Phở bò", fon: "fuh baw", cat: "fideos", pais: "vn", dif: 3, min: 180, por: 4, pasos: 7, ing: [
+  { id: "pho_bo", nat: "Phở bò", fon: "fuh baw", cat: "fideos", pais: "vn", dif: 3, min: 180, por: 4, pasos: 13, ing: [
     r("carne_vacuna", 500, "g"), r("fideos_arroz", 400, "g"), r("cebolla", 2, "unidad"),
     r("jengibre", 60, "g"), r("anis_estrellado", 4, "unidad"), r("canela", 1, "unidad"),
     r("cardamomo", 3, "unidad"), r("salsa_pescado", 4, "cda"), r("brotes_soja", 200, "g"),
@@ -241,7 +241,7 @@ const RECETAS = [
     r("salsa_soja", 4, "cda"), r("aceite_sesamo", 2, "cda"), r("azucar", 2, "cda"),
     r("sesamo_semillas", 1, "cda"), r("ajo", 3, "diente"),
   ]},
-  { id: "laksa", nat: "Laksa", fon: "lak-sa", cat: "fideos", pais: "my", dif: 3, min: 50, por: 4, pasos: 6, ing: [
+  { id: "laksa", nat: "Laksa", fon: "lak-sa", cat: "fideos", pais: "my", dif: 3, min: 50, por: 4, pasos: 12, ing: [
     r("fideos_arroz", 300, "g"), r("camaron", 300, "g"), r("tofu_firme", 200, "g"),
     r("leche_coco", 600, "ml"), r("pasta_curry_rojo", 3, "cda"), r("limoncillo", 2, "unidad"),
     r("salsa_pescado", 2, "cda"), r("brotes_soja", 150, "g"), r("huevo", 2, "unidad"),
@@ -271,7 +271,7 @@ const RECETAS = [
     r("jengibre", 30, "g"), r("ajo", 3, "diente"), r("maicena", 100, "g"),
     r("aceite_neutro", 500, "ml"), r("lima", 1, "unidad"),
   ]},
-  { id: "hainanese_chicken", nat: "海南雞飯", fon: "hǎinán jīfàn", cat: "pollo", pais: "sg", dif: 3, min: 75, por: 4, pasos: 7, ing: [
+  { id: "hainanese_chicken", nat: "海南雞飯", fon: "hǎinán jīfàn", cat: "pollo", pais: "sg", dif: 3, min: 75, por: 4, pasos: 14, ing: [
     r("pollo_entero", 1500, "g"), r("arroz_jazmin", 400, "g"), r("jengibre", 80, "g"),
     r("ajo", 6, "diente"), r("cebolla_verde", 4, "unidad"), r("aceite_sesamo", 2, "cda"),
     r("salsa_soja", 3, "cda"), r("pepino", 1, "unidad"), r("sriracha", 3, "cda"),
@@ -296,7 +296,7 @@ const RECETAS = [
     r("salsa_soja_oscura", 1, "cda"), r("azucar", 3, "cda"), r("ajo", 4, "diente"),
     r("jengibre", 25, "g"), r("cebolla_verde", 4, "unidad"), r("aceite_neutro", 4, "cda"),
   ]},
-  { id: "rendang", nat: "Rendang", fon: "ren-dang", cat: "carne", pais: "id", dif: 3, min: 180, por: 6, pasos: 6, ing: [
+  { id: "rendang", nat: "Rendang", fon: "ren-dang", cat: "carne", pais: "id", dif: 3, min: 180, por: 6, pasos: 13, ing: [
     r("carne_vacuna", 1000, "g"), r("leche_coco", 800, "ml"), r("pasta_curry_rojo", 4, "cda"),
     r("limoncillo", 2, "unidad"), r("galanga", 40, "g"), r("hoja_lima", 4, "unidad"),
     r("cinco_especias", 1, "cdta"), r("azucar_palma", 2, "cda"), r("sal", 2, "cdta"),
@@ -332,7 +332,7 @@ const RECETAS = [
     r("salsa_pescado", 4, "cda"), r("lima", 3, "unidad"), r("cilantro", 1, "puñado"),
     r("pasta_curry_rojo", 1, "cda"), r("caldo_pollo", 1000, "ml"),
   ]},
-  { id: "chili_crab", nat: "辣椒螃蟹", fon: "làjiāo pángxiè", cat: "mariscos", pais: "sg", dif: 3, min: 45, por: 3, pasos: 6, ing: [
+  { id: "chili_crab", nat: "辣椒螃蟹", fon: "làjiāo pángxiè", cat: "mariscos", pais: "sg", dif: 3, min: 45, por: 3, pasos: 13, ing: [
     r("cangrejo", 1200, "g"), r("tomate", 3, "unidad"), r("sriracha", 4, "cda"),
     r("salsa_soja", 2, "cda"), r("azucar", 2, "cda"), r("huevo", 2, "unidad"),
     r("ajo", 6, "diente"), r("jengibre", 30, "g"), r("maicena", 2, "cda"),
@@ -362,7 +362,7 @@ const RECETAS = [
     r("huevo", 2, "unidad"), r("pasta_gochujang", 3, "cda"), r("aceite_sesamo", 2, "cda"),
     r("sesamo_semillas", 1, "cda"), r("salsa_soja", 2, "cda"),
   ]},
-  { id: "nasi_goreng", nat: "Nasi goreng", fon: "na-si go-reng", cat: "arroz", pais: "id", dif: 1, min: 25, por: 2, pasos: 5, ing: [
+  { id: "nasi_goreng", nat: "Nasi goreng", fon: "na-si go-reng", cat: "arroz", pais: "id", dif: 1, min: 25, por: 2, pasos: 11, ing: [
     r("arroz_jazmin", 350, "g"), r("pollo_muslo", 250, "g"), r("huevo", 2, "unidad"),
     r("salsa_soja_oscura", 2, "cda"), r("pasta_gochujang", 1, "cda"), r("ajo", 4, "diente"),
     r("cebolla", 1, "unidad"), r("pepino", 1, "unidad"), r("aceite_neutro", 3, "cda"),
@@ -430,7 +430,7 @@ const RECETAS = [
     r("miel", 2, "cda"), r("levadura", 1, "cdta"), r("pasta_judia_roja", 250, "g"),
     r("leche", 60, "ml"),
   ]},
-  { id: "egg_tarts", nat: "蛋撻", fon: "daan6 taat1", cat: "reposteria", pais: "hk", dif: 3, min: 70, por: 8, pasos: 6, ing: [
+  { id: "egg_tarts", nat: "蛋撻", fon: "daan6 taat1", cat: "reposteria", pais: "hk", dif: 3, min: 70, por: 8, pasos: 14, ing: [
     r("harina", 250, "g"), r("manteca", 150, "g"), r("huevo", 4, "unidad"),
     r("azucar", 100, "g"), r("leche", 200, "ml"), r("crema", 100, "ml"),
     r("vainilla", 1, "cdta"),
