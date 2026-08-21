@@ -230,7 +230,7 @@ const RECETAS = [
     r("cardamomo", 3, "unidad"), r("salsa_pescado", 4, "cda"), r("brotes_soja", 200, "g"),
     r("albahaca_thai", 1, "puñado"), r("lima", 2, "unidad"), r("menta", 1, "puñado"),
   ]},
-  { id: "yakisoba", nat: "焼きそば", fon: "yakisoba", cat: "fideos", pais: "jp", dif: 1, min: 25, por: 2, pasos: 8, ing: [
+  { id: "yakisoba", nat: "焼きそば", fon: "yakisoba", cat: "fideos", pais: "jp", dif: 1, min: 25, por: 2, pasos: 11, ing: [
     r("fideos_ramen", 300, "g"), r("cerdo_panceta", 200, "g"), r("repollo", 200, "g"),
     r("zanahoria", 1, "unidad"), r("cebolla", 1, "unidad"), r("salsa_ostras", 2, "cda"),
     r("salsa_soja", 2, "cda"), r("salsa_hoisin", 1, "cda"), r("aceite_neutro", 2, "cda"),
@@ -266,7 +266,7 @@ const RECETAS = [
     r("vino_shaoxing", 2, "cda"), r("azucar", 1, "cda"), r("maicena", 1, "cda"),
     r("ajo", 3, "diente"), r("cebolla_verde", 3, "unidad"),
   ]},
-  { id: "karaage", nat: "唐揚げ", fon: "karaage", cat: "pollo", pais: "jp", dif: 2, min: 40, por: 4, pasos: 10, ing: [
+  { id: "karaage", nat: "唐揚げ", fon: "karaage", cat: "pollo", pais: "jp", dif: 2, min: 40, por: 4, pasos: 12, ing: [
     r("pollo_muslo", 700, "g"), r("salsa_soja", 3, "cda"), r("vino_shaoxing", 2, "cda"),
     r("jengibre", 30, "g"), r("ajo", 3, "diente"), r("maicena", 100, "g"),
     r("aceite_neutro", 500, "ml"), r("lima", 1, "unidad"),
@@ -302,7 +302,7 @@ const RECETAS = [
     r("cinco_especias", 1, "cdta"), r("azucar_palma", 2, "cda"), r("sal", 2, "cdta"),
     r("chile_seco", 6, "unidad"),
   ]},
-  { id: "gyudon", nat: "牛丼", fon: "gyūdon", cat: "carne", pais: "jp", dif: 1, min: 25, por: 2, pasos: 9, ing: [
+  { id: "gyudon", nat: "牛丼", fon: "gyūdon", cat: "carne", pais: "jp", dif: 1, min: 25, por: 2, pasos: 11, ing: [
     r("carne_vacuna", 400, "g"), r("cebolla", 1, "unidad"), r("salsa_soja", 4, "cda"),
     r("mirin", 3, "cda"), r("azucar", 1, "cda"), r("caldo_pollo", 200, "ml"),
     r("huevo", 2, "unidad"), r("arroz_corto", 300, "g"), r("cebolla_verde", 2, "unidad"),
@@ -314,7 +314,7 @@ const RECETAS = [
     r("miel", 3, "cda"), r("vino_shaoxing", 2, "cda"), r("cinco_especias", 1, "cdta"),
     r("ajo", 4, "diente"), r("aceite_sesamo", 1, "cda"),
   ]},
-  { id: "tonkatsu", nat: "とんかつ", fon: "tonkatsu", cat: "cerdo", pais: "jp", dif: 2, min: 35, por: 2, pasos: 10, ing: [
+  { id: "tonkatsu", nat: "とんかつ", fon: "tonkatsu", cat: "cerdo", pais: "jp", dif: 2, min: 35, por: 2, pasos: 13, ing: [
     r("cerdo_lomo", 400, "g"), r("panko", 150, "g"), r("harina", 60, "g"),
     r("huevo", 2, "unidad"), r("aceite_neutro", 500, "ml"), r("repollo", 200, "g"),
     r("salsa_hoisin", 2, "cda"), r("arroz_corto", 300, "g"),
@@ -344,7 +344,7 @@ const RECETAS = [
     r("cebolla_verde", 2, "unidad"), r("aceite_neutro", 3, "cda"),
   ]},
 
-  { id: "salmon_teriyaki", nat: "鮭の照り焼き", fon: "sake no teriyaki", cat: "mariscos", pais: "jp", dif: 1, min: 20, por: 2, pasos: 9, ing: [
+  { id: "salmon_teriyaki", nat: "鮭の照り焼き", fon: "sake no teriyaki", cat: "mariscos", pais: "jp", dif: 1, min: 20, por: 2, pasos: 11, ing: [
     r("salmon", 400, "g"), r("salsa_soja", 3, "cda"), r("mirin", 3, "cda"),
     r("azucar", 1, "cda"), r("jengibre", 15, "g"), r("sesamo_semillas", 1, "cda"),
     r("cebolla_verde", 2, "unidad"), r("arroz_corto", 300, "g"),
@@ -367,7 +367,7 @@ const RECETAS = [
     r("salsa_soja_oscura", 2, "cda"), r("pasta_gochujang", 1, "cda"), r("ajo", 4, "diente"),
     r("cebolla", 1, "unidad"), r("pepino", 1, "unidad"), r("aceite_neutro", 3, "cda"),
   ]},
-  { id: "katsudon", nat: "カツ丼", fon: "katsudon", cat: "arroz", pais: "jp", dif: 2, min: 40, por: 2, pasos: 10, ing: [
+  { id: "katsudon", nat: "カツ丼", fon: "katsudon", cat: "arroz", pais: "jp", dif: 2, min: 40, por: 2, pasos: 13, ing: [
     r("cerdo_lomo", 350, "g"), r("panko", 120, "g"), r("harina", 50, "g"),
     r("huevo", 4, "unidad"), r("cebolla", 1, "unidad"), r("salsa_soja", 3, "cda"),
     r("mirin", 3, "cda"), r("caldo_pollo", 250, "ml"), r("arroz_corto", 300, "g"),
@@ -394,7 +394,7 @@ const RECETAS = [
   ]},
 
   // ---------------- SOPAS ----------------
-  { id: "miso_shiru", nat: "味噌汁", fon: "misoshiru", cat: "sopas", pais: "jp", dif: 1, min: 15, por: 4, pasos: 8, ing: [
+  { id: "miso_shiru", nat: "味噌汁", fon: "misoshiru", cat: "sopas", pais: "jp", dif: 1, min: 15, por: 4, pasos: 10, ing: [
     r("pasta_miso", 4, "cda"), r("tofu_sedoso", 200, "g"), r("alga_nori", 10, "g"),
     r("cebolla_verde", 2, "unidad"), r("caldo_pollo", 1000, "ml"),
   ]},
@@ -421,11 +421,11 @@ const RECETAS = [
     r("arroz_glutinoso", 300, "g"), r("leche_coco", 400, "ml"), r("azucar_palma", 80, "g"),
     r("sal", 1, "cdta"), r("mango", 2, "unidad"), r("sesamo_semillas", 1, "cda"),
   ]},
-  { id: "mochi", nat: "餅", fon: "mochi", cat: "reposteria", pais: "jp", dif: 2, min: 50, por: 8, pasos: 10, ing: [
+  { id: "mochi", nat: "餅", fon: "mochi", cat: "reposteria", pais: "jp", dif: 2, min: 50, por: 8, pasos: 12, ing: [
     r("harina_glutinosa", 200, "g"), r("azucar", 100, "g"), r("pasta_judia_roja", 200, "g"),
     r("maicena", 60, "g"), r("vainilla", 1, "cdta"),
   ]},
-  { id: "dorayaki", nat: "どら焼き", fon: "dorayaki", cat: "reposteria", pais: "jp", dif: 2, min: 40, por: 6, pasos: 10, ing: [
+  { id: "dorayaki", nat: "どら焼き", fon: "dorayaki", cat: "reposteria", pais: "jp", dif: 2, min: 40, por: 6, pasos: 12, ing: [
     r("harina", 200, "g"), r("huevo", 3, "unidad"), r("azucar", 100, "g"),
     r("miel", 2, "cda"), r("levadura", 1, "cdta"), r("pasta_judia_roja", 250, "g"),
     r("leche", 60, "ml"),
@@ -435,7 +435,7 @@ const RECETAS = [
     r("azucar", 100, "g"), r("leche", 200, "ml"), r("crema", 100, "ml"),
     r("vainilla", 1, "cdta"),
   ]},
-  { id: "matcha_cookies", nat: "抹茶クッキー", fon: "matcha kukkī", cat: "reposteria", pais: "jp", dif: 1, min: 35, por: 12, pasos: 10, ing: [
+  { id: "matcha_cookies", nat: "抹茶クッキー", fon: "matcha kukkī", cat: "reposteria", pais: "jp", dif: 1, min: 35, por: 12, pasos: 12, ing: [
     r("harina", 250, "g"), r("manteca", 150, "g"), r("azucar_impalpable", 90, "g"),
     r("matcha", 2, "cda"), r("huevo", 1, "unidad"), r("sal", 1, "cdta"),
   ]},
