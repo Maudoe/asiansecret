@@ -1,6 +1,6 @@
 FOTOS DE LOS PLATOS
 
-76 de 83 listas.
+78 de 83 listas.
 
 Pone aca una imagen por receta, con el nombre de archivo exacto de la lista.
 Las marcadas con [x] ya estan.
@@ -106,13 +106,13 @@ pueden ir agregando de a poco sin romper nada.
   [x] som_tam.jpg               Som Tam  ·  ส้มตำ
   [x] tom_saap.jpg              Tom Saap  ·  ต้มแซ่บ
 
---- VIETNAM  (0/1) ---
+--- VIETNAM  (1/1) ---
 
-  [ ] pho_bo.jpg                Phở Bò  ·  Phở bò
+  [x] pho_bo.jpg                Phở Bò  ·  Phở bò
 
---- HONG KONG  (0/1) ---
+--- HONG KONG  (1/1) ---
 
-  [ ] egg_tarts.jpg             Tartitas de Huevo  ·  蛋撻
+  [x] egg_tarts.jpg             Tartitas de Huevo  ·  蛋撻
 
 --- MALASIA  (0/1) ---
 
@@ -130,4 +130,4 @@ pueden ir agregando de a poco sin romper nada.
 
 ================================================================
 
-Faltan 7.
+Faltan 5.
