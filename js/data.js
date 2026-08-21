@@ -200,7 +200,7 @@ const r = (i, c, u) => ({ i, c, u });
 // dif: 1 fácil · 2 media · 3 difícil   ·   min: minutos totales   ·   por: porciones
 const RECETAS = [
   // ---------------- FIDEOS ----------------
-  { id: "khao_soi", nat: "ข้าวซอย", fon: "khâo soi", cat: "fideos", pais: "th", dif: 2, min: 45, por: 4, pasos: 8, ing: [
+  { id: "khao_soi", nat: "ข้าวซอย", fon: "khâo soi", cat: "fideos", pais: "th", dif: 2, min: 45, por: 4, pasos: 12, ing: [
     r("pollo_muslo", 600, "g"), r("fideos_huevo", 400, "g"), r("leche_coco", 800, "ml"),
     r("pasta_curry_rojo", 3, "cda"), r("curry_polvo", 1, "cda"), r("cúrcuma", 1, "cdta"),
     r("salsa_pescado", 3, "cda"), r("azucar_palma", 1, "cda"), r("cebolla_verde", 3, "unidad"),
@@ -212,7 +212,7 @@ const RECETAS = [
     r("ajo", 4, "diente"), r("cebolla_verde", 2, "unidad"), r("mani", 40, "g"),
     r("sesamo_semillas", 1, "cda"), r("azucar", 1, "cdta"),
   ]},
-  { id: "pad_thai", nat: "ผัดไทย", fon: "phàt thai", cat: "fideos", pais: "th", dif: 2, min: 30, por: 2, pasos: 8, ing: [
+  { id: "pad_thai", nat: "ผัดไทย", fon: "phàt thai", cat: "fideos", pais: "th", dif: 2, min: 30, por: 2, pasos: 11, ing: [
     r("fideos_arroz", 200, "g"), r("camaron", 250, "g"), r("huevo", 2, "unidad"),
     r("tamarindo", 3, "cda"), r("salsa_pescado", 2, "cda"), r("azucar_palma", 2, "cda"),
     r("brotes_soja", 150, "g"), r("cebolla_verde", 3, "unidad"), r("mani", 50, "g"),
@@ -254,7 +254,7 @@ const RECETAS = [
     r("azucar", 2, "cda"), r("jengibre", 20, "g"), r("aceite_neutro", 1, "cda"),
     r("sesamo_semillas", 1, "cda"), r("cebolla_verde", 2, "unidad"), r("arroz_jazmin", 300, "g"),
   ]},
-  { id: "gai_pad_krapow", nat: "ไก่ผัดกะเพรา", fon: "kài phàt kaphrao", cat: "pollo", pais: "th", dif: 1, min: 20, por: 2, pasos: 6, ing: [
+  { id: "gai_pad_krapow", nat: "ไก่ผัดกะเพรา", fon: "kài phàt kaphrao", cat: "pollo", pais: "th", dif: 1, min: 20, por: 2, pasos: 10, ing: [
     r("pollo_muslo", 400, "g"), r("albahaca_thai", 2, "puñado"), r("ajo", 5, "diente"),
     r("chile_fresco", 4, "unidad"), r("salsa_pescado", 2, "cda"), r("salsa_ostras", 1, "cda"),
     r("salsa_soja_oscura", 1, "cdta"), r("azucar", 1, "cdta"), r("huevo", 2, "unidad"),
@@ -326,7 +326,7 @@ const RECETAS = [
   ]},
 
   // ---------------- MARISCOS ----------------
-  { id: "tom_yum_goong", nat: "ต้มยำกุ้ง", fon: "tôm yam kûng", cat: "mariscos", pais: "th", dif: 2, min: 30, por: 4, pasos: 7, ing: [
+  { id: "tom_yum_goong", nat: "ต้มยำกุ้ง", fon: "tôm yam kûng", cat: "mariscos", pais: "th", dif: 2, min: 30, por: 4, pasos: 10, ing: [
     r("camaron", 500, "g"), r("limoncillo", 3, "unidad"), r("galanga", 40, "g"),
     r("hoja_lima", 6, "unidad"), r("champinones", 200, "g"), r("chile_fresco", 5, "unidad"),
     r("salsa_pescado", 4, "cda"), r("lima", 3, "unidad"), r("cilantro", 1, "puñado"),
@@ -381,13 +381,13 @@ const RECETAS = [
     r("jengibre", 20, "g"), r("cebolla_verde", 3, "unidad"), r("maicena", 1, "cda"),
     r("caldo_pollo", 250, "ml"), r("aceite_chile", 2, "cda"),
   ]},
-  { id: "curry_verde_verduras", nat: "แกงเขียวหวานผัก", fon: "kaeng khǐao wǎan phàk", cat: "vegetariano", pais: "th", dif: 1, min: 30, por: 4, pasos: 7, ing: [
+  { id: "curry_verde_verduras", nat: "แกงเขียวหวานผัก", fon: "kaeng khǐao wǎan phàk", cat: "vegetariano", pais: "th", dif: 1, min: 30, por: 4, pasos: 10, ing: [
     r("tofu_firme", 400, "g"), r("pasta_curry_verde", 3, "cda"), r("leche_coco", 800, "ml"),
     r("brocoli", 250, "g"), r("pimiento", 2, "unidad"), r("albahaca_thai", 1, "puñado"),
     r("salsa_pescado", 2, "cda"), r("azucar_palma", 1, "cda"), r("hoja_lima", 4, "unidad"),
     r("arroz_jazmin", 400, "g"),
   ]},
-  { id: "pad_pak_boong", nat: "ผัดผักบุ้ง", fon: "phàt phàk bûng", cat: "vegetariano", pais: "th", dif: 1, min: 12, por: 2, pasos: 5, ing: [
+  { id: "pad_pak_boong", nat: "ผัดผักบุ้ง", fon: "phàt phàk bûng", cat: "vegetariano", pais: "th", dif: 1, min: 12, por: 2, pasos: 9, ing: [
     r("pakboong", 400, "g"), r("ajo", 5, "diente"), r("chile_fresco", 3, "unidad"),
     r("salsa_ostras", 2, "cda"), r("salsa_soja", 1, "cda"), r("azucar", 1, "cdta"),
     r("aceite_neutro", 2, "cda"),
@@ -398,7 +398,7 @@ const RECETAS = [
     r("pasta_miso", 4, "cda"), r("tofu_sedoso", 200, "g"), r("alga_nori", 10, "g"),
     r("cebolla_verde", 2, "unidad"), r("caldo_pollo", 1000, "ml"),
   ]},
-  { id: "tom_kha_gai", nat: "ต้มข่าไก่", fon: "tôm khàa kài", cat: "sopas", pais: "th", dif: 2, min: 30, por: 4, pasos: 7, ing: [
+  { id: "tom_kha_gai", nat: "ต้มข่าไก่", fon: "tôm khàa kài", cat: "sopas", pais: "th", dif: 2, min: 30, por: 4, pasos: 10, ing: [
     r("pollo_muslo", 400, "g"), r("leche_coco", 800, "ml"), r("galanga", 50, "g"),
     r("limoncillo", 3, "unidad"), r("hoja_lima", 6, "unidad"), r("champinones", 200, "g"),
     r("salsa_pescado", 3, "cda"), r("lima", 2, "unidad"), r("chile_fresco", 3, "unidad"),
@@ -417,7 +417,7 @@ const RECETAS = [
   ]},
 
   // ---------------- REPOSTERÍA ----------------
-  { id: "mango_sticky_rice", nat: "ข้าวเหนียวมะม่วง", fon: "khâo nǐao mamûang", cat: "reposteria", pais: "th", dif: 1, min: 45, por: 4, pasos: 7, ing: [
+  { id: "mango_sticky_rice", nat: "ข้าวเหนียวมะม่วง", fon: "khâo nǐao mamûang", cat: "reposteria", pais: "th", dif: 1, min: 45, por: 4, pasos: 10, ing: [
     r("arroz_glutinoso", 300, "g"), r("leche_coco", 400, "ml"), r("azucar_palma", 80, "g"),
     r("sal", 1, "cdta"), r("mango", 2, "unidad"), r("sesamo_semillas", 1, "cda"),
   ]},
@@ -439,24 +439,24 @@ const RECETAS = [
     r("harina", 250, "g"), r("manteca", 150, "g"), r("azucar_impalpable", 90, "g"),
     r("matcha", 2, "cda"), r("huevo", 1, "unidad"), r("sal", 1, "cdta"),
   ]},
-  { id: "banana_roti", nat: "โรตีกล้วย", fon: "rotii klûai", cat: "reposteria", pais: "th", dif: 2, min: 30, por: 4, pasos: 7, ing: [
+  { id: "banana_roti", nat: "โรตีกล้วย", fon: "rotii klûai", cat: "reposteria", pais: "th", dif: 2, min: 30, por: 4, pasos: 11, ing: [
     r("harina", 250, "g"), r("huevo", 2, "unidad"), r("banana", 3, "unidad"),
     r("manteca", 60, "g"), r("leche", 100, "ml"), r("azucar", 3, "cda"),
     r("leche_coco", 100, "ml"),
   ]},
   // ---------------- TAILANDIA ----------------
-  { id: "gaeng_keow_wan", nat: "แกงเขียวหวาน", fon: "kaeng khǐao wǎan", cat: "pollo", pais: "th", dif: 2, min: 35, por: 4, pasos: 7, ing: [
+  { id: "gaeng_keow_wan", nat: "แกงเขียวหวาน", fon: "kaeng khǐao wǎan", cat: "pollo", pais: "th", dif: 2, min: 35, por: 4, pasos: 10, ing: [
     r("pollo_muslo", 500, "g"), r("pasta_curry_verde", 3, "cda"), r("leche_coco", 800, "ml"),
     r("berenjena_thai", 200, "g"), r("albahaca_thai", 2, "puñado"), r("hoja_lima", 5, "unidad"),
     r("salsa_pescado", 3, "cda"), r("azucar_palma", 1, "cda"), r("chile_fresco", 3, "unidad"),
     r("arroz_jazmin", 400, "g"),
   ]},
-  { id: "gai_yang", nat: "ไก่ย่าง", fon: "kài yâang", cat: "pollo", pais: "th", dif: 2, min: 50, por: 4, pasos: 8, ing: [
+  { id: "gai_yang", nat: "ไก่ย่าง", fon: "kài yâang", cat: "pollo", pais: "th", dif: 2, min: 50, por: 4, pasos: 12, ing: [
     r("pollo_entero", 1200, "g"), r("cilantro", 1, "puñado"), r("ajo", 8, "diente"),
     r("pimienta_negra", 1, "cda"), r("salsa_pescado", 4, "cda"), r("salsa_ostras", 2, "cda"),
     r("azucar_palma", 2, "cda"), r("leche_coco", 100, "ml"), r("arroz_glutinoso", 400, "g"),
   ]},
-  { id: "gai_tod", nat: "ไก่ทอด", fon: "kài thôot", cat: "pollo", pais: "th", dif: 2, min: 45, por: 4, pasos: 7, ing: [
+  { id: "gai_tod", nat: "ไก่ทอด", fon: "kài thôot", cat: "pollo", pais: "th", dif: 2, min: 45, por: 4, pasos: 10, ing: [
     r("pollo_muslo", 800, "g"), r("harina_arroz", 150, "g"), r("maicena", 50, "g"),
     r("salsa_pescado", 3, "cda"), r("ajo", 6, "diente"), r("pimienta_negra", 1, "cdta"),
     r("aceite_neutro", 600, "ml"), r("cilantro", 1, "puñado"),
