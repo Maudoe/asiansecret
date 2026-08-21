@@ -461,23 +461,23 @@ const RECETAS = [
     r("salsa_pescado", 3, "cda"), r("ajo", 6, "diente"), r("pimienta_negra", 1, "cdta"),
     r("aceite_neutro", 600, "ml"), r("cilantro", 1, "puñado"),
   ]},
-  { id: "khao_man_gai", nat: "ข้าวมันไก่", fon: "khâo man kài", cat: "pollo", pais: "th", dif: 2, min: 65, por: 4, pasos: 8, ing: [
+  { id: "khao_man_gai", nat: "ข้าวมันไก่", fon: "khâo man kài", cat: "pollo", pais: "th", dif: 2, min: 65, por: 4, pasos: 12, ing: [
     r("pollo_entero", 1300, "g"), r("arroz_jazmin", 400, "g"), r("jengibre", 60, "g"),
     r("ajo", 6, "diente"), r("pasta_gochujang", 2, "cda"), r("salsa_soja_dulce", 3, "cda"),
     r("vinagre_arroz", 2, "cda"), r("pepino", 1, "unidad"), r("cilantro", 1, "puñado"),
   ]},
-  { id: "massaman", nat: "แกงมัสมั่น", fon: "kaeng matsamàn", cat: "carne", pais: "th", dif: 2, min: 95, por: 4, pasos: 8, ing: [
+  { id: "massaman", nat: "แกงมัสมั่น", fon: "kaeng matsamàn", cat: "carne", pais: "th", dif: 2, min: 95, por: 4, pasos: 11, ing: [
     r("carne_vacuna", 800, "g"), r("pasta_curry_massaman", 4, "cda"), r("leche_coco", 800, "ml"),
     r("papa", 500, "g"), r("cebolla", 2, "unidad"), r("mani", 80, "g"),
     r("canela", 1, "unidad"), r("cardamomo", 3, "unidad"), r("tamarindo", 2, "cda"),
     r("azucar_palma", 2, "cda"), r("salsa_pescado", 3, "cda"),
   ]},
-  { id: "panang", nat: "พะแนง", fon: "phanaeng", cat: "carne", pais: "th", dif: 2, min: 40, por: 4, pasos: 7, ing: [
+  { id: "panang", nat: "พะแนง", fon: "phanaeng", cat: "carne", pais: "th", dif: 2, min: 40, por: 4, pasos: 11, ing: [
     r("carne_vacuna", 600, "g"), r("pasta_curry_panang", 4, "cda"), r("leche_coco", 600, "ml"),
     r("hoja_lima", 6, "unidad"), r("albahaca_thai", 1, "puñado"), r("mani", 40, "g"),
     r("salsa_pescado", 3, "cda"), r("azucar_palma", 2, "cda"), r("arroz_jazmin", 400, "g"),
   ]},
-  { id: "nam_tok", nat: "น้ำตกหมู", fon: "nám tòk mǔu", cat: "cerdo", pais: "th", dif: 2, min: 35, por: 3, pasos: 7, ing: [
+  { id: "nam_tok", nat: "น้ำตกหมู", fon: "nám tòk mǔu", cat: "cerdo", pais: "th", dif: 2, min: 35, por: 3, pasos: 10, ing: [
     r("cerdo_lomo", 500, "g"), r("arroz_tostado", 2, "cda"), r("chile_seco", 2, "cdta"),
     r("lima", 3, "unidad"), r("salsa_pescado", 3, "cda"), r("cebolla_verde", 3, "unidad"),
     r("menta", 1, "puñado"), r("cilantro", 1, "puñado"), r("lechuga", 100, "g"),
@@ -487,38 +487,38 @@ const RECETAS = [
     r("lima", 3, "unidad"), r("salsa_pescado", 3, "cda"), r("cebolla_verde", 3, "unidad"),
     r("menta", 1, "puñado"), r("cilantro", 1, "puñado"), r("arroz_glutinoso", 300, "g"),
   ]},
-  { id: "pad_see_ew", nat: "ผัดซีอิ๊ว", fon: "phàt sii íu", cat: "fideos", pais: "th", dif: 2, min: 25, por: 2, pasos: 7, ing: [
+  { id: "pad_see_ew", nat: "ผัดซีอิ๊ว", fon: "phàt sii íu", cat: "fideos", pais: "th", dif: 2, min: 25, por: 2, pasos: 9, ing: [
     r("fideos_arroz", 400, "g"), r("cerdo_lomo", 250, "g"), r("huevo", 2, "unidad"),
     r("brocoli", 200, "g"), r("salsa_soja_oscura", 2, "cda"), r("salsa_soja_dulce", 2, "cda"),
     r("salsa_ostras", 2, "cda"), r("ajo", 4, "diente"), r("aceite_neutro", 3, "cda"),
   ]},
-  { id: "pad_kee_mao", nat: "ผัดขี้เมา", fon: "phàt khîi mao", cat: "fideos", pais: "th", dif: 2, min: 25, por: 2, pasos: 7, ing: [
+  { id: "pad_kee_mao", nat: "ผัดขี้เมา", fon: "phàt khîi mao", cat: "fideos", pais: "th", dif: 2, min: 25, por: 2, pasos: 9, ing: [
     r("fideos_arroz", 400, "g"), r("pollo_muslo", 300, "g"), r("albahaca_thai", 2, "puñado"),
     r("chile_fresco", 5, "unidad"), r("ajo", 6, "diente"), r("salsa_ostras", 2, "cda"),
     r("salsa_soja_oscura", 1, "cda"), r("salsa_pescado", 1, "cda"), r("pimiento", 1, "unidad"),
     r("aceite_neutro", 3, "cda"),
   ]},
-  { id: "boat_noodles", nat: "ก๋วยเตี๋ยวเรือ", fon: "kǔai tǐao ruea", cat: "fideos", pais: "th", dif: 3, min: 95, por: 4, pasos: 8, ing: [
+  { id: "boat_noodles", nat: "ก๋วยเตี๋ยวเรือ", fon: "kǔai tǐao ruea", cat: "fideos", pais: "th", dif: 3, min: 95, por: 4, pasos: 11, ing: [
     r("carne_vacuna", 600, "g"), r("fideos_arroz", 400, "g"), r("caldo_pollo", 1500, "ml"),
     r("anis_estrellado", 3, "unidad"), r("canela", 1, "unidad"), r("salsa_soja_oscura", 3, "cda"),
     r("vinagre_arroz", 2, "cda"), r("azucar_palma", 1, "cda"), r("brotes_soja", 150, "g"),
     r("cilantro", 1, "puñado"), r("chile_seco", 1, "cdta"),
   ]},
-  { id: "khao_pad", nat: "ข้าวผัด", fon: "khâo phàt", cat: "arroz", pais: "th", dif: 1, min: 20, por: 2, pasos: 7, ing: [
+  { id: "khao_pad", nat: "ข้าวผัด", fon: "khâo phàt", cat: "arroz", pais: "th", dif: 1, min: 20, por: 2, pasos: 9, ing: [
     r("arroz_jazmin", 400, "g"), r("pollo_muslo", 250, "g"), r("huevo", 2, "unidad"),
     r("cebolla", 1, "unidad"), r("cebolla_verde", 2, "unidad"), r("salsa_pescado", 2, "cda"),
     r("salsa_soja", 1, "cda"), r("tomate", 1, "unidad"), r("lima", 1, "unidad"),
     r("aceite_neutro", 3, "cda"),
   ]},
-  { id: "khao_niao", nat: "ข้าวเหนียว", fon: "khâo nǐao", cat: "arroz", pais: "th", dif: 1, min: 40, por: 4, pasos: 6, ing: [
+  { id: "khao_niao", nat: "ข้าวเหนียว", fon: "khâo nǐao", cat: "arroz", pais: "th", dif: 1, min: 40, por: 4, pasos: 9, ing: [
     r("arroz_glutinoso", 500, "g"), r("sal", 1, "cdta"),
   ]},
-  { id: "som_tam", nat: "ส้มตำ", fon: "sôm tam", cat: "vegetariano", pais: "th", dif: 1, min: 20, por: 2, pasos: 7, ing: [
+  { id: "som_tam", nat: "ส้มตำ", fon: "sôm tam", cat: "vegetariano", pais: "th", dif: 1, min: 20, por: 2, pasos: 10, ing: [
     r("papaya_verde", 400, "g"), r("porotos_largos", 80, "g"), r("tomate", 2, "unidad"),
     r("mani", 50, "g"), r("chile_fresco", 4, "unidad"), r("ajo", 3, "diente"),
     r("lima", 3, "unidad"), r("salsa_pescado", 3, "cda"), r("azucar_palma", 2, "cda"),
   ]},
-  { id: "tom_saap", nat: "ต้มแซ่บ", fon: "tôm sâep", cat: "sopas", pais: "th", dif: 2, min: 50, por: 4, pasos: 7, ing: [
+  { id: "tom_saap", nat: "ต้มแซ่บ", fon: "tôm sâep", cat: "sopas", pais: "th", dif: 2, min: 50, por: 4, pasos: 11, ing: [
     r("cerdo_costilla", 800, "g"), r("limoncillo", 3, "unidad"), r("galanga", 40, "g"),
     r("hoja_lima", 6, "unidad"), r("chile_seco", 2, "cdta"), r("lima", 3, "unidad"),
     r("salsa_pescado", 4, "cda"), r("cebolla_verde", 3, "unidad"), r("cilantro", 1, "puñado"),
