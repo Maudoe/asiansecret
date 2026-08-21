@@ -1,5 +1,10 @@
 // ============ ASIANSECRET — lógica ============
 
+// Los archivos de assets/platos/ se pisan con el mismo nombre cuando se
+// reprocesa una foto, así que el navegador puede seguir mostrando la
+// versión vieja cacheada. Subir este número fuerza la descarga de nuevo.
+const V_FOTOS = 2;
+
 const CLAVE_SEL = "asiansecret.seleccion";
 const CLAVE_ALA = "asiansecret.alacena";
 const CLAVE_IDIOMA = "asiansecret.idioma";
@@ -218,7 +223,7 @@ function tarjeta(rec) {
   // Mientras no haya foto queda el mosaico con el ícono de la categoría.
   const foto = crear("div", "tarjeta-foto");
   const img = document.createElement("img");
-  img.src = "assets/platos/" + rec.id + ".jpg";
+  img.src = "assets/platos/" + rec.id + ".jpg?v=" + V_FOTOS;
   img.alt = "";
   img.loading = "lazy";
   img.addEventListener("error", () => { img.remove(); foto.classList.add("sin-foto"); });
@@ -329,7 +334,7 @@ function abrirModal(id) {
   // ---------------- lado de la foto ----------------
   const ladoFoto = crear("div", "modal-lado-foto");
   const fotoModal = document.createElement("img");
-  fotoModal.src = "assets/platos/" + rec.id + ".jpg";
+  fotoModal.src = "assets/platos/" + rec.id + ".jpg?v=" + V_FOTOS;
   fotoModal.alt = t("r." + rec.id + ".n");
   fotoModal.addEventListener("error", () => {
     fotoModal.remove();
