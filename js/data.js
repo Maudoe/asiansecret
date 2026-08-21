@@ -206,7 +206,7 @@ const RECETAS = [
     r("salsa_pescado", 3, "cda"), r("azucar_palma", 1, "cda"), r("cebolla_verde", 3, "unidad"),
     r("lima", 2, "unidad"), r("cilantro", 1, "puñado"), r("aceite_neutro", 2, "cda"),
   ]},
-  { id: "chongqing_noodles", nat: "重庆小面", fon: "chóngqìng xiǎomiàn", cat: "fideos", pais: "cn", dif: 2, min: 30, por: 2, pasos: 9, ing: [
+  { id: "chongqing_noodles", nat: "重庆小面", fon: "chóngqìng xiǎomiàn", cat: "fideos", pais: "cn", dif: 2, min: 30, por: 2, pasos: 10, ing: [
     r("fideos_trigo", 250, "g"), r("cerdo_picado", 200, "g"), r("aceite_chile", 3, "cda"),
     r("pimienta_sichuan", 1, "cdta"), r("salsa_soja", 2, "cda"), r("vinagre_arroz", 1, "cda"),
     r("ajo", 4, "diente"), r("cebolla_verde", 2, "unidad"), r("mani", 40, "g"),
@@ -218,7 +218,7 @@ const RECETAS = [
     r("brotes_soja", 150, "g"), r("cebolla_verde", 3, "unidad"), r("mani", 50, "g"),
     r("lima", 1, "unidad"), r("aceite_neutro", 3, "cda"),
   ]},
-  { id: "dan_dan", nat: "担担面", fon: "dàndàn miàn", cat: "fideos", pais: "cn", dif: 2, min: 35, por: 2, pasos: 9, ing: [
+  { id: "dan_dan", nat: "担担面", fon: "dàndàn miàn", cat: "fideos", pais: "cn", dif: 2, min: 35, por: 2, pasos: 10, ing: [
     r("fideos_trigo", 250, "g"), r("cerdo_picado", 250, "g"), r("pasta_gochujang", 1, "cda"),
     r("aceite_chile", 3, "cda"), r("pimienta_sichuan", 1, "cdta"), r("salsa_soja", 3, "cda"),
     r("vino_shaoxing", 1, "cda"), r("ajo", 3, "diente"), r("cebolla_verde", 2, "unidad"),
@@ -260,7 +260,7 @@ const RECETAS = [
     r("salsa_soja_oscura", 1, "cdta"), r("azucar", 1, "cdta"), r("huevo", 2, "unidad"),
     r("arroz_jazmin", 300, "g"), r("aceite_neutro", 3, "cda"),
   ]},
-  { id: "kung_pao", nat: "宫保鸡丁", fon: "gōngbǎo jīdīng", cat: "pollo", pais: "cn", dif: 2, min: 30, por: 2, pasos: 9, ing: [
+  { id: "kung_pao", nat: "宫保鸡丁", fon: "gōngbǎo jīdīng", cat: "pollo", pais: "cn", dif: 2, min: 30, por: 2, pasos: 10, ing: [
     r("pollo_pechuga", 400, "g"), r("mani", 80, "g"), r("chile_seco", 8, "unidad"),
     r("pimienta_sichuan", 1, "cdta"), r("salsa_soja", 3, "cda"), r("vinagre_arroz", 2, "cda"),
     r("vino_shaoxing", 2, "cda"), r("azucar", 1, "cda"), r("maicena", 1, "cda"),
@@ -291,7 +291,7 @@ const RECETAS = [
     r("cebolla", 1, "unidad"), r("cebolla_verde", 3, "unidad"), r("sesamo_semillas", 1, "cda"),
     r("arroz_jazmin", 400, "g"),
   ]},
-  { id: "mongolian_beef", nat: "蒙古牛肉", fon: "ménggǔ niúròu", cat: "carne", pais: "cn", dif: 2, min: 30, por: 3, pasos: 9, ing: [
+  { id: "mongolian_beef", nat: "蒙古牛肉", fon: "ménggǔ niúròu", cat: "carne", pais: "cn", dif: 2, min: 30, por: 3, pasos: 10, ing: [
     r("carne_vacuna", 500, "g"), r("maicena", 3, "cda"), r("salsa_soja", 4, "cda"),
     r("salsa_soja_oscura", 1, "cda"), r("azucar", 3, "cda"), r("ajo", 4, "diente"),
     r("jengibre", 25, "g"), r("cebolla_verde", 4, "unidad"), r("aceite_neutro", 4, "cda"),
@@ -309,7 +309,7 @@ const RECETAS = [
   ]},
 
   // ---------------- CERDO ----------------
-  { id: "char_siu", nat: "叉烧", fon: "chāshāo", cat: "cerdo", pais: "cn", dif: 2, min: 90, por: 4, pasos: 9, ing: [
+  { id: "char_siu", nat: "叉烧", fon: "chāshāo", cat: "cerdo", pais: "cn", dif: 2, min: 90, por: 4, pasos: 10, ing: [
     r("cerdo_lomo", 800, "g"), r("salsa_hoisin", 4, "cda"), r("salsa_soja", 3, "cda"),
     r("miel", 3, "cda"), r("vino_shaoxing", 2, "cda"), r("cinco_especias", 1, "cdta"),
     r("ajo", 4, "diente"), r("aceite_sesamo", 1, "cda"),
@@ -319,7 +319,7 @@ const RECETAS = [
     r("huevo", 2, "unidad"), r("aceite_neutro", 500, "ml"), r("repollo", 200, "g"),
     r("salsa_hoisin", 2, "cda"), r("arroz_corto", 300, "g"),
   ]},
-  { id: "twice_cooked_pork", nat: "回锅肉", fon: "huíguō ròu", cat: "cerdo", pais: "cn", dif: 2, min: 45, por: 3, pasos: 9, ing: [
+  { id: "twice_cooked_pork", nat: "回锅肉", fon: "huíguō ròu", cat: "cerdo", pais: "cn", dif: 2, min: 45, por: 3, pasos: 10, ing: [
     r("cerdo_panceta", 500, "g"), r("pimiento", 2, "unidad"), r("cebolla_verde", 3, "unidad"),
     r("pasta_gochujang", 2, "cda"), r("salsa_soja", 2, "cda"), r("vino_shaoxing", 2, "cda"),
     r("ajo", 4, "diente"), r("jengibre", 20, "g"), r("azucar", 1, "cdta"),
@@ -338,7 +338,7 @@ const RECETAS = [
     r("ajo", 6, "diente"), r("jengibre", 30, "g"), r("maicena", 2, "cda"),
     r("cilantro", 1, "puñado"),
   ]},
-  { id: "camarones_ajo_chile", nat: "蒜蓉辣椒虾", fon: "suànróng làjiāo xiā", cat: "mariscos", pais: "cn", dif: 1, min: 20, por: 2, pasos: 8, ing: [
+  { id: "camarones_ajo_chile", nat: "蒜蓉辣椒虾", fon: "suànróng làjiāo xiā", cat: "mariscos", pais: "cn", dif: 1, min: 20, por: 2, pasos: 9, ing: [
     r("camaron", 400, "g"), r("ajo", 8, "diente"), r("chile_fresco", 3, "unidad"),
     r("salsa_soja", 2, "cda"), r("vino_shaoxing", 1, "cda"), r("aceite_sesamo", 1, "cdta"),
     r("cebolla_verde", 2, "unidad"), r("aceite_neutro", 3, "cda"),
@@ -351,7 +351,7 @@ const RECETAS = [
   ]},
 
   // ---------------- ARROZ ----------------
-  { id: "arroz_yangzhou", nat: "扬州炒饭", fon: "yángzhōu chǎofàn", cat: "arroz", pais: "cn", dif: 1, min: 25, por: 3, pasos: 9, ing: [
+  { id: "arroz_yangzhou", nat: "扬州炒饭", fon: "yángzhōu chǎofàn", cat: "arroz", pais: "cn", dif: 1, min: 25, por: 3, pasos: 10, ing: [
     r("arroz_jazmin", 400, "g"), r("camaron", 200, "g"), r("huevo", 3, "unidad"),
     r("cerdo_lomo", 150, "g"), r("cebolla_verde", 3, "unidad"), r("salsa_soja", 3, "cda"),
     r("aceite_sesamo", 1, "cdta"), r("aceite_neutro", 3, "cda"), r("sal", 1, "cdta"),
@@ -375,7 +375,7 @@ const RECETAS = [
   ]},
 
   // ---------------- VEGETARIANO ----------------
-  { id: "mapo_tofu", nat: "麻婆豆腐", fon: "mápó dòufu", cat: "vegetariano", pais: "cn", dif: 2, min: 25, por: 3, pasos: 10, ing: [
+  { id: "mapo_tofu", nat: "麻婆豆腐", fon: "mápó dòufu", cat: "vegetariano", pais: "cn", dif: 2, min: 25, por: 3, pasos: 11, ing: [
     r("tofu_sedoso", 500, "g"), r("hongos_shiitake", 150, "g"), r("pasta_gochujang", 2, "cda"),
     r("pimienta_sichuan", 1, "cdta"), r("salsa_soja", 2, "cda"), r("ajo", 4, "diente"),
     r("jengibre", 20, "g"), r("cebolla_verde", 3, "unidad"), r("maicena", 1, "cda"),
@@ -404,12 +404,12 @@ const RECETAS = [
     r("salsa_pescado", 3, "cda"), r("lima", 2, "unidad"), r("chile_fresco", 3, "unidad"),
     r("cilantro", 1, "puñado"),
   ]},
-  { id: "wonton_soup", nat: "馄饨汤", fon: "húntun tāng", cat: "sopas", pais: "cn", dif: 3, min: 60, por: 4, pasos: 10, ing: [
+  { id: "wonton_soup", nat: "馄饨汤", fon: "húntun tāng", cat: "sopas", pais: "cn", dif: 3, min: 60, por: 4, pasos: 11, ing: [
     r("wonton_tapas", 300, "g"), r("cerdo_picado", 300, "g"), r("camaron", 150, "g"),
     r("jengibre", 20, "g"), r("cebolla_verde", 3, "unidad"), r("salsa_soja", 2, "cda"),
     r("aceite_sesamo", 1, "cda"), r("caldo_pollo", 1200, "ml"), r("espinaca", 100, "g"),
   ]},
-  { id: "sopa_agripicante", nat: "酸辣汤", fon: "suānlà tāng", cat: "sopas", pais: "cn", dif: 2, min: 30, por: 4, pasos: 9, ing: [
+  { id: "sopa_agripicante", nat: "酸辣汤", fon: "suānlà tāng", cat: "sopas", pais: "cn", dif: 2, min: 30, por: 4, pasos: 10, ing: [
     r("tofu_firme", 200, "g"), r("hongos_shiitake", 150, "g"), r("huevo", 2, "unidad"),
     r("vinagre_arroz", 4, "cda"), r("pimienta_negra", 1, "cdta"), r("salsa_soja", 3, "cda"),
     r("maicena", 3, "cda"), r("caldo_pollo", 1200, "ml"), r("aceite_chile", 1, "cda"),
