@@ -525,60 +525,60 @@ const RECETAS = [
     r("arroz_tostado", 1, "cda"),
   ]},
   // ---------------- RAMEN Y CLÁSICOS JAPONESES ----------------
-  { id: "tonkotsu_ramen", nat: "豚骨ラーメン", fon: "tonkotsu rāmen", cat: "fideos", pais: "jp", dif: 3, min: 480, por: 4, pasos: 11, ing: [
+  { id: "tonkotsu_ramen", nat: "豚骨ラーメン", fon: "tonkotsu rāmen", cat: "fideos", pais: "jp", dif: 3, min: 480, por: 4, pasos: 15, ing: [
     r("cerdo_huesos", 2000, "g"), r("cerdo_panceta", 600, "g"), r("fideos_ramen", 400, "g"),
     r("huevo", 4, "unidad"), r("cebolla_verde", 4, "unidad"), r("menma", 100, "g"),
     r("alga_nori", 4, "unidad"), r("salsa_soja", 100, "ml"), r("mirin", 3, "cda"),
     r("ajo", 6, "diente"), r("jengibre", 40, "g"),
   ]},
-  { id: "shoyu_ramen", nat: "醤油ラーメン", fon: "shōyu rāmen", cat: "fideos", pais: "jp", dif: 2, min: 90, por: 4, pasos: 11, ing: [
+  { id: "shoyu_ramen", nat: "醤油ラーメン", fon: "shōyu rāmen", cat: "fideos", pais: "jp", dif: 2, min: 90, por: 4, pasos: 15, ing: [
     r("caldo_pollo", 1600, "ml"), r("alga_kombu", 20, "g"), r("katsuobushi", 20, "g"),
     r("fideos_ramen", 400, "g"), r("cerdo_panceta", 400, "g"), r("salsa_soja", 120, "ml"),
     r("mirin", 3, "cda"), r("huevo", 4, "unidad"), r("cebolla_verde", 3, "unidad"),
     r("menma", 80, "g"), r("alga_nori", 4, "unidad"),
   ]},
-  { id: "miso_ramen", nat: "味噌ラーメン", fon: "miso rāmen", cat: "fideos", pais: "jp", dif: 2, min: 75, por: 4, pasos: 10, ing: [
+  { id: "miso_ramen", nat: "味噌ラーメン", fon: "miso rāmen", cat: "fideos", pais: "jp", dif: 2, min: 75, por: 4, pasos: 13, ing: [
     r("caldo_pollo", 1400, "ml"), r("pasta_miso", 120, "g"), r("cerdo_picado", 250, "g"),
     r("fideos_ramen", 400, "g"), r("brotes_soja", 200, "g"), r("choclo_grano", 150, "g"),
     r("ajo", 5, "diente"), r("jengibre", 30, "g"), r("aceite_sesamo", 2, "cda"),
     r("huevo", 4, "unidad"), r("cebolla_verde", 3, "unidad"),
   ]},
-  { id: "shio_ramen", nat: "塩ラーメン", fon: "shio rāmen", cat: "fideos", pais: "jp", dif: 2, min: 80, por: 4, pasos: 10, ing: [
+  { id: "shio_ramen", nat: "塩ラーメン", fon: "shio rāmen", cat: "fideos", pais: "jp", dif: 2, min: 80, por: 4, pasos: 13, ing: [
     r("caldo_pollo", 1600, "ml"), r("alga_kombu", 25, "g"), r("sal", 3, "cda"),
     r("fideos_ramen", 400, "g"), r("pollo_pechuga", 400, "g"), r("huevo", 4, "unidad"),
     r("cebolla_verde", 3, "unidad"), r("alga_nori", 4, "unidad"), r("aceite_sesamo", 1, "cda"),
   ]},
-  { id: "tantanmen", nat: "担々麺", fon: "tantanmen", cat: "fideos", pais: "jp", dif: 2, min: 45, por: 2, pasos: 10, ing: [
+  { id: "tantanmen", nat: "担々麺", fon: "tantanmen", cat: "fideos", pais: "jp", dif: 2, min: 45, por: 2, pasos: 13, ing: [
     r("fideos_ramen", 250, "g"), r("cerdo_picado", 300, "g"), r("pasta_sesamo", 4, "cda"),
     r("leche_coco", 200, "ml"), r("caldo_pollo", 600, "ml"), r("pasta_miso", 2, "cda"),
     r("aceite_chile", 3, "cda"), r("pimienta_sichuan", 1, "cdta"), r("ajo", 4, "diente"),
     r("cebolla_verde", 3, "unidad"), r("bok_choy", 200, "g"),
   ]},
-  { id: "tsukemen", nat: "つけ麺", fon: "tsukemen", cat: "fideos", pais: "jp", dif: 3, min: 120, por: 2, pasos: 11, ing: [
+  { id: "tsukemen", nat: "つけ麺", fon: "tsukemen", cat: "fideos", pais: "jp", dif: 3, min: 120, por: 2, pasos: 14, ing: [
     r("fideos_ramen", 300, "g"), r("cerdo_huesos", 1000, "g"), r("cerdo_panceta", 300, "g"),
     r("katsuobushi", 25, "g"), r("salsa_soja", 80, "ml"), r("mirin", 3, "cda"),
     r("vinagre_arroz", 1, "cda"), r("azucar", 1, "cda"), r("cebolla_verde", 3, "unidad"),
     r("menma", 80, "g"), r("lima", 1, "unidad"),
   ]},
-  { id: "hiyashi_chuka", nat: "冷やし中華", fon: "hiyashi chūka", cat: "fideos", pais: "jp", dif: 1, min: 30, por: 2, pasos: 10, ing: [
+  { id: "hiyashi_chuka", nat: "冷やし中華", fon: "hiyashi chūka", cat: "fideos", pais: "jp", dif: 1, min: 30, por: 2, pasos: 13, ing: [
     r("fideos_ramen", 250, "g"), r("jamon", 120, "g"), r("huevo", 2, "unidad"),
     r("pepino", 1, "unidad"), r("tomate", 1, "unidad"), r("salsa_soja", 4, "cda"),
     r("vinagre_arroz", 4, "cda"), r("azucar", 2, "cda"), r("aceite_sesamo", 2, "cdta"),
     r("jengibre_encurtido", 30, "g"),
   ]},
-  { id: "katsu_curry", nat: "カツカレー", fon: "katsu karē", cat: "cerdo", pais: "jp", dif: 2, min: 60, por: 4, pasos: 10, ing: [
+  { id: "katsu_curry", nat: "カツカレー", fon: "katsu karē", cat: "cerdo", pais: "jp", dif: 2, min: 60, por: 4, pasos: 16, ing: [
     r("cerdo_lomo", 600, "g"), r("panko", 150, "g"), r("harina", 80, "g"),
     r("huevo", 2, "unidad"), r("curry_polvo", 3, "cda"), r("cebolla", 2, "unidad"),
     r("zanahoria", 2, "unidad"), r("papa", 400, "g"), r("manzana", 1, "unidad"),
     r("caldo_pollo", 800, "ml"), r("aceite_neutro", 500, "ml"), r("arroz_corto", 400, "g"),
   ]},
-  { id: "okonomiyaki", nat: "お好み焼き", fon: "okonomiyaki", cat: "cerdo", pais: "jp", dif: 2, min: 40, por: 2, pasos: 10, ing: [
+  { id: "okonomiyaki", nat: "お好み焼き", fon: "okonomiyaki", cat: "cerdo", pais: "jp", dif: 2, min: 40, por: 2, pasos: 14, ing: [
     r("repollo", 400, "g"), r("harina", 150, "g"), r("huevo", 3, "unidad"),
     r("caldo_pollo", 120, "ml"), r("polvo_hornear", 1, "cdta"), r("cerdo_panceta", 150, "g"),
     r("salsa_okonomiyaki", 4, "cda"), r("mayonesa_japonesa", 3, "cda"), r("katsuobushi", 10, "g"),
     r("alga_nori", 1, "unidad"), r("cebolla_verde", 2, "unidad"),
   ]},
-  { id: "takoyaki", nat: "たこ焼き", fon: "takoyaki", cat: "mariscos", pais: "jp", dif: 3, min: 45, por: 4, pasos: 10, ing: [
+  { id: "takoyaki", nat: "たこ焼き", fon: "takoyaki", cat: "mariscos", pais: "jp", dif: 3, min: 45, por: 4, pasos: 13, ing: [
     r("pulpo", 300, "g"), r("harina", 200, "g"), r("huevo", 2, "unidad"),
     r("caldo_pollo", 600, "ml"), r("cebolla_verde", 3, "unidad"), r("jengibre_encurtido", 40, "g"),
     r("salsa_okonomiyaki", 4, "cda"), r("mayonesa_japonesa", 3, "cda"), r("katsuobushi", 10, "g"),
