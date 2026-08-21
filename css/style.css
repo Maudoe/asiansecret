@@ -1123,6 +1123,18 @@ li.hecha .nombre, li.hecha .cant { opacity: 0.4; text-decoration: line-through; 
   display: block;
   filter: saturate(1.18) contrast(1.05) brightness(1.03);
 }
+/* Parallax sutil: la foto arranca acercada y corrida a la izquierda, y en
+   20 segundos se desliza hacia la derecha mientras se aleja (zoom out). Se
+   reinicia solo porque el <img> se crea de nuevo cada vez que se abre un
+   modal. "both" deja la imagen en el estado final en vez de saltar de
+   vuelta al arranque cuando termina. */
+@media (prefers-reduced-motion: no-preference) {
+  .modal-lado-foto img { animation: parallax-foto 20s ease-in-out both; }
+}
+@keyframes parallax-foto {
+  from { transform: scale(1.14) translateX(-2.5%); }
+  to   { transform: scale(1.02) translateX(2.5%); }
+}
 .modal-doble[data-cat="fideos"]      { --tinte: #6d2d1c; }
 .modal-doble[data-cat="pollo"]       { --tinte: #6b4f1a; }
 .modal-doble[data-cat="carne"]       { --tinte: #64201a; }
