@@ -7,7 +7,11 @@
   <title>AsianSecret</title>
   <link rel="icon" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- El "?v=" es a propósito: sin un parámetro que cambie, el navegador puede
+       seguir sirviendo una copia vieja del CSS cacheada aunque el archivo ya
+       haya cambiado en el servidor. Subir este número en cada cambio visual
+       de style.css fuerza la descarga de la versión nueva. -->
+  <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
 
