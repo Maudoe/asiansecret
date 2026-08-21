@@ -482,7 +482,7 @@ const RECETAS = [
     r("lima", 3, "unidad"), r("salsa_pescado", 3, "cda"), r("cebolla_verde", 3, "unidad"),
     r("menta", 1, "puñado"), r("cilantro", 1, "puñado"), r("lechuga", 100, "g"),
   ]},
-  { id: "larb_moo", nat: "ลาบหมู", fon: "lâap mǔu", cat: "cerdo", pais: "th", dif: 1, min: 25, por: 3, pasos: 7, ing: [
+  { id: "larb_moo", nat: "ลาบหมู", fon: "lâap mǔu", cat: "cerdo", pais: "th", dif: 1, min: 25, por: 3, pasos: 11, ing: [
     r("cerdo_picado", 500, "g"), r("arroz_tostado", 2, "cda"), r("chile_seco", 2, "cdta"),
     r("lima", 3, "unidad"), r("salsa_pescado", 3, "cda"), r("cebolla_verde", 3, "unidad"),
     r("menta", 1, "puñado"), r("cilantro", 1, "puñado"), r("arroz_glutinoso", 300, "g"),
