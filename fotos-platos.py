@@ -8,10 +8,16 @@
 # que no importa si trae fechas, guiones bajos o caracteres raros al final.
 # Si un archivo no matchea, se lista al terminar y se agrega su prefijo abajo.
 #
-# El recorte va a lo alto completo y centrado: en estas fotos el plato está
-# siempre en el medio del cuadro, así que perder los costados es mejor que
-# perder el plato.
-from PIL import Image
+# Las fotos originales son horizontales (~4:3) y la tarjeta es vertical (4:5):
+# recortarlas a lo alto completo para llenar el marco borde a borde perdía
+# casi la mitad del ancho, y el plato quedaba pegado al cuadro. En cambio, el
+# archivo final lleva DOS capas: de fondo, la misma foto recortada a 4:5 pero
+# muy desenfocada y oscurecida (rellena el marco sin que se note el recorte);
+# encima, la foto ENTERA sin recortar, un poco más chica, centrada. Así el
+# <img> puede volver a llenar el contenedor al 100% -sin margen en el CSS- y
+# el plato se ve completo igual, con un aire de foto "flotando" en vez de un
+# corte seco.
+from PIL import Image, ImageFilter, ImageEnhance
 import os, sys, unicodedata
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
@@ -135,17 +141,38 @@ def normalizar(s):
     return unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode().lower()
 
 
-def recortar(im):
+def recorte_relleno(im):
+    """El viejo recorte a pura 4:5, ahora usado sólo para el fondo desenfocado."""
     w, h = im.size
     ancho_recorte = round(h * ANCHO / ALTO)
     if ancho_recorte <= w:                       # horizontal: se recorta a los costados
         izq = (w - ancho_recorte) // 2
-        im = im.crop((izq, 0, izq + ancho_recorte, h))
+        recorte = im.crop((izq, 0, izq + ancho_recorte, h))
     else:                                        # vertical: se recorta arriba y abajo
         alto_recorte = round(w * ALTO / ANCHO)
         arriba = (h - alto_recorte) // 3         # a un tercio: deja más aire arriba que mantel abajo
-        im = im.crop((0, arriba, w, arriba + alto_recorte))
-    return im.resize((ANCHO, ALTO), Image.LANCZOS)
+        recorte = im.crop((0, arriba, w, arriba + alto_recorte))
+    return recorte.resize((ANCHO, ALTO), Image.LANCZOS)
+
+
+def recortar(im):
+    # Fondo: el recorte de siempre, pero desenfocado y oscurecido para que
+    # rellene el marco sin competir con la foto principal de encima.
+    fondo = recorte_relleno(im)
+    fondo = fondo.filter(ImageFilter.GaussianBlur(28))
+    fondo = ImageEnhance.Brightness(fondo).enhance(0.55)
+    fondo = ImageEnhance.Color(fondo).enhance(0.85)
+
+    # Primer plano: la foto ENTERA sin recortar (contain, no cover), al 92%
+    # para que quede un respiro parejo alrededor en vez de tocar los bordes.
+    w, h = im.size
+    escala = min(ANCHO / w, ALTO / h) * 0.92
+    fw, fh = round(w * escala), round(h * escala)
+    frente = im.resize((fw, fh), Image.LANCZOS)
+
+    lienzo = fondo.copy()
+    lienzo.paste(frente, ((ANCHO - fw) // 2, (ALTO - fh) // 2))
+    return lienzo
 
 
 def main():

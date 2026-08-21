@@ -705,26 +705,18 @@ h1, h2, h3, .serif {
 }
 .tarjeta:focus-visible { outline: 2px solid var(--oro); outline-offset: 2px; }
 
-/* --- la foto va dentro de la tarjeta, con un respiro alrededor ---
-   Las fotos originales son horizontales (~4:3) y la tarjeta es vertical
-   (4:5): para llenarla borde a borde hay que recortar casi la mitad del
-   ancho, y el plato queda pegado al marco. Este margen no muestra más
-   escena -eso ya es el máximo que da la foto sin dejar franjas vacías-
-   pero al no llenar el cuadro entero el plato se aprecia más "alejado". */
-.tarjeta-foto {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  background: linear-gradient(160deg, var(--tinte, #2a2119), #100e0b 78%);
-}
+/* --- la foto ocupa toda la tarjeta ---
+   El "aire" alrededor del plato ya no es un margen de CSS: está horneado
+   adentro del archivo (fotos-platos.py arma un fondo desenfocado de la
+   misma foto y encima pega la foto ENTERA sin recortar, más chica). Así el
+   <img> puede volver a llenar el 100% del contenedor -sin espacio raro en
+   el DOM- y el plato se sigue viendo completo. */
+.tarjeta-foto { position: absolute; inset: 0; overflow: hidden; }
 .tarjeta-foto img {
-  position: absolute;
-  inset: 5%;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: calc(var(--radio) - 5px);
   /* Realza el color real del plato: sin esto, el velo de abajo hacía todo
      el trabajo de "atmósfera" y la comida quedaba sin vida. */
   filter: saturate(1.2) contrast(1.06) brightness(1.03);
@@ -746,6 +738,7 @@ h1, h2, h3, .serif {
   opacity: 0.9;
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.7));
 }
+.tarjeta-foto.sin-foto { background: linear-gradient(160deg, var(--tinte, #2a2119), #100e0b 78%); }
 .tarjeta-foto.sin-foto::before {
   content: "";
   position: absolute;
@@ -1128,19 +1121,14 @@ li.hecha .nombre, li.hecha .cant { opacity: 0.4; text-decoration: line-through; 
   min-height: 380px;
   background: linear-gradient(160deg, var(--tinte, #241d16), #0c0a08);
 }
-/* La columna de la foto suele ser más angosta y alta que la foto en sí
-   (900x1125), así que si la imagen llena el 100% del recuadro, object-fit
-   cover recorta TODAVÍA más allá del recorte que ya trae el archivo. Con el
-   mismo margen que las tarjetas, el plato se ve completo y no pegado a los
-   bordes. */
+/* El "aire" alrededor del plato viene horneado en el archivo (ver
+   fotos-platos.py), así que la imagen puede llenar el 100% del recuadro sin
+   recortar el plato mismo, aunque la columna del modal no sea 4:5 exacto. */
 .modal-lado-foto img {
-  position: absolute;
-  inset: 4%;
-  width: 92%;
-  height: 92%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 10px;
   filter: saturate(1.18) contrast(1.05) brightness(1.03);
 }
 /* Parallax sutil: la foto arranca apenas acercada y corrida a la izquierda,
