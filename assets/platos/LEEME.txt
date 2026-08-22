@@ -1,6 +1,6 @@
 FOTOS DE LOS PLATOS
 
-78 de 83 listas.
+79 de 83 listas.
 
 Pone aca una imagen por receta, con el nombre de archivo exacto de la lista.
 Las marcadas con [x] ya estan.
@@ -114,9 +114,9 @@ pueden ir agregando de a poco sin romper nada.
 
   [x] egg_tarts.jpg             Tartitas de Huevo  ·  蛋撻
 
---- MALASIA  (0/1) ---
+--- MALASIA  (1/1) ---
 
-  [ ] laksa.jpg                 Laksa  ·  Laksa
+  [x] laksa.jpg                 Laksa  ·  Laksa
 
 --- SINGAPUR  (0/2) ---
 
@@ -130,4 +130,4 @@ pueden ir agregando de a poco sin romper nada.
 
 ================================================================
 
-Faltan 5.
+Faltan 4.
