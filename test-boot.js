@@ -200,7 +200,7 @@ chk(!q("#vista-recetas").classList.contains("oculto"), "el clic en la bandera no
 chk(q("#vista-paises").classList.contains("oculto"), "la portada debería ocultarse al elegir país");
 
 const tarjetas = qa("#grilla .tarjeta");
-chk(tarjetas.length === 20, `Corea debería mostrar 20 recetas, muestra ${tarjetas.length}`);
+chk(tarjetas.length === 21, `Corea debería mostrar 21 recetas, muestra ${tarjetas.length}`);
 const nombres = tarjetas.map((t) => t.querySelector(".tarjeta-nombre").textContent);
 ["Kimchi", "Bibimbap", "Samgyetang", "Hotteok"].forEach((n) =>
   chk(nombres.includes(n), `falta ${n} entre las recetas coreanas`));

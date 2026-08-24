@@ -50,6 +50,8 @@ PREFIJOS = {
     'haemul_pajeon': 'haemul_pajeon',
     'pajeon': 'haemul_pajeon',
     'hotteok': 'hotteok',
+    'ramyeon': 'ramyeon',
+    'ramyun': 'ramyeon',
     'jajangmyeon': 'jajangmyeon',
     'japchae': 'japchae',
     'kimbap': 'kimbap',

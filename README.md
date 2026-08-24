@@ -72,21 +72,21 @@ Para agregar un idioma: copiar `es.js`, traducir los valores, cambiar el código
 > Son `.js` que envuelven un JSON en vez de `.json` puros porque el navegador bloquea leer `.json`
 > locales al abrir con doble clic (CORS en `file://`). El contenido interno es JSON — se edita igual.
 
-Hoy están **español e inglés**, con 1144 claves cada uno y paridad verificada.
+Hoy están **español e inglés**, con 1437 claves cada uno y paridad verificada.
 
 **La excepción:** el nombre en escritura original y su pronunciación viven en `js/data.js`,
 como `nat` y `fon`, no en `language/`. 김치 es 김치 en todos los idiomas — meterlo en los
-archivos de traducción significaría mantener 83 cadenas idénticas cada vez que se suma una
+archivos de traducción significaría mantener 84 cadenas idénticas cada vez que se suma una
 lengua. La romanización usa el estándar de cada una: pinyin con tonos, Revisada para el
 coreano, Hepburn para el japonés, RTGS para el tailandés.
 
 ## Contenido
 
-**83 recetas** de Tailandia, China, Japón, Corea, Vietnam, Malasia, Indonesia, Singapur y Hong Kong.
+**84 recetas** de Tailandia, China, Japón, Corea, Vietnam, Malasia, Indonesia, Singapur y Hong Kong.
 
 | Categoría | Recetas |
 |---|---|
-| 🍜 Fideos | 20 |
+| 🍜 Fideos | 21 |
 | 🍗 Pollo | 11 |
 | 🥩 Carne | 7 |
 | 🐖 Cerdo | 10 |
@@ -97,12 +97,12 @@ coreano, Hepburn para el japonés, RTGS para el tailandés.
 | 🍡 Repostería | 7 |
 
 Cada una con origen, tiempo, porciones, dificultad, ingredientes con cantidades y pasos numerados
-— **946 pasos** en total, escritos con la técnica adentro (por qué se seca la proteína, por qué no
+— **955 pasos** en total, escritos con la técnica adentro (por qué se seca la proteína, por qué no
 hay que hervir el miso, por qué el arroz frito se hace con arroz del día anterior).
 
 ### Los pasos
 
-**Las 83 recetas** están escritas **a nivel libro de cocina, para alguien que nunca cocinó**: cada
+**Las 84 recetas** están escritas **a nivel libro de cocina, para alguien que nunca cocinó**: cada
 paso hace una sola cosa, cada herramienta o técnica (mortero, wok humeando, gochujang, fuego
 medio) se explica en palabras simples la primera vez que aparece en esa receta —con una alternativa
 casera si no se tiene a mano—, cada cantidad vaga se vuelve exacta ("un chorrito de agua" → "2
@@ -187,7 +187,8 @@ Cada plato es una foto vertical (4:5) con el texto encima. Las fotos van en `ass
 con el nombre del id de la receta — `bibimbap.jpg`, `khao_soi.jpg`. Están todas listadas en
 `assets/platos/LEEME.txt`, con su nombre y su escritura original al lado.
 
-**Las 83 recetas tienen foto.** `LEEME.txt` marca con `[x]` cada una, país por país.
+**83 de las 84 recetas tienen foto** (falta la del ramyeon recién agregado). `LEEME.txt` marca
+con `[x]` cada una, país por país.
 
 **Si alguna vez falta una, no rompe nada**: la tarjeta cae en un mosaico teñido según la
 categoría, con su ícono. Las fotos se pueden ir agregando de a una.

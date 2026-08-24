@@ -64,6 +64,7 @@ const INGREDIENTES = {
   hoja_lima:        { sec: "fresco" },
   mango:            { sec: "fresco" },
   banana:           { sec: "fresco" },
+  queso:            { sec: "fresco" },
 
   // --- secos ---
   fideos_arroz:     { sec: "seco" },
@@ -71,6 +72,7 @@ const INGREDIENTES = {
   fideos_huevo:     { sec: "seco" },
   fideos_vidrio:    { sec: "seco" },
   fideos_ramen:     { sec: "seco" },
+  fideos_instantaneos: { sec: "seco" },
   arroz_jazmin:     { sec: "seco", alacena: true },
   arroz_glutinoso:  { sec: "seco", receta: "khao_niao" },
   arroz_corto:      { sec: "seco" },
@@ -673,6 +675,10 @@ const RECETAS = [
     r("harina", 300, "g"), r("arroz_glutinoso", 50, "g"), r("levadura", 7, "g"),
     r("azucar", 2, "cda"), r("azucar_moreno", 120, "g"), r("canela", 2, "cdta"),
     r("nueces", 80, "g"), r("sal", 1, "cdta"), r("aceite_neutro", 4, "cda"),
+  ]},
+  { id: "ramyeon", nat: "라면", fon: "ramyeon", cat: "fideos", pais: "kr", dif: 1, min: 15, por: 1, pasos: 9, ing: [
+    r("fideos_instantaneos", 1, "unidad"), r("huevo", 1, "unidad"),
+    r("cebolla_verde", 1, "unidad"), r("queso", 1, "unidad"),
   ]},
 ];
 
