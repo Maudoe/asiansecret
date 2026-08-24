@@ -1,6 +1,6 @@
 FOTOS DE LOS PLATOS
 
-83 de 84 listas.
+84 de 84 listas.
 
 Pone aca una imagen por receta, con el nombre de archivo exacto de la lista.
 Las marcadas con [x] ya estan.
@@ -32,7 +32,7 @@ pueden ir agregando de a poco sin romper nada.
   [x] wonton_soup.jpg           Sopa de Wontons  ·  馄饨汤
   [x] sopa_agripicante.jpg      Sopa Agripicante  ·  酸辣汤
 
---- COREA  (20/21) ---
+--- COREA  (21/21) ---
 
   [x] japchae.jpg               Japchae  ·  잡채
   [x] dakgalbi.jpg              Dakgalbi  ·  닭갈비
@@ -54,7 +54,7 @@ pueden ir agregando de a poco sin romper nada.
   [x] bossam.jpg                Bossam  ·  보쌈
   [x] kongguksu.jpg             Kongguksu  ·  콩국수
   [x] hotteok.jpg               Hotteok  ·  호떡
-  [ ] ramyeon.jpg                Ramyeon  ·  라면
+  [x] ramyeon.jpg                Ramyeon  ·  라면
 
 --- JAPÓN  (21/21) ---
 
@@ -131,4 +131,4 @@ pueden ir agregando de a poco sin romper nada.
 
 ================================================================
 
-Falta 1.
+Completo — las 84 recetas tienen foto.
