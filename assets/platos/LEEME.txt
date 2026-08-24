@@ -1,6 +1,6 @@
 FOTOS DE LOS PLATOS
 
-81 de 83 listas.
+83 de 83 listas.
 
 Pone aca una imagen por receta, con el nombre de archivo exacto de la lista.
 Las marcadas con [x] ya estan.
@@ -123,11 +123,11 @@ pueden ir agregando de a poco sin romper nada.
   [x] hainanese_chicken.jpg     Arroz con Pollo Hainanés  ·  海南雞飯
   [x] chili_crab.jpg            Cangrejo al Chile  ·  辣椒螃蟹
 
---- INDONESIA  (0/2) ---
+--- INDONESIA  (2/2) ---
 
-  [ ] rendang.jpg               Rendang  ·  Rendang
-  [ ] nasi_goreng.jpg           Nasi Goreng  ·  Nasi goreng
+  [x] rendang.jpg               Rendang  ·  Rendang
+  [x] nasi_goreng.jpg           Nasi Goreng  ·  Nasi goreng
 
 ================================================================
 
-Faltan 2.
+Completo — las 83 recetas tienen foto.

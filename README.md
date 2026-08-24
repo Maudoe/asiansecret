@@ -187,10 +187,10 @@ Cada plato es una foto vertical (4:5) con el texto encima. Las fotos van en `ass
 con el nombre del id de la receta — `bibimbap.jpg`, `khao_soi.jpg`. Están todas listadas en
 `assets/platos/LEEME.txt`, con su nombre y su escritura original al lado.
 
-**Van 11 de 83** — China completa. `LEEME.txt` marca con `[x]` las que ya están.
+**Las 83 recetas tienen foto.** `LEEME.txt` marca con `[x]` cada una, país por país.
 
-**La que falta no rompe nada**: la tarjeta cae en un mosaico teñido según la categoría, con su
-ícono. Las fotos se pueden ir agregando de a una.
+**Si alguna vez falta una, no rompe nada**: la tarjeta cae en un mosaico teñido según la
+categoría, con su ícono. Las fotos se pueden ir agregando de a una.
 
 Si vienen horizontales no importa: se recortan a lo alto completo y se centran. Lo que sí importa
 es que el plato no quede pegado al borde de abajo, porque ahí va el nombre sobre el degradado.
